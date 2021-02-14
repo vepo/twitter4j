@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.vepo</groupId>
 	<artifactId>io.vepo.twitter4j</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<name>Java Library for Twitter Bot</name>
 	<description>Emcapsulate Twitter API on a library</description>
 	<packaging>jar</packaging>
@@ -13,6 +13,7 @@
 		<sonar.projectKey>vepo_twitter4j</sonar.projectKey>
 		<sonar.organization>vepo-github</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+		<sonar.projectVersion>${project.version}</sonar.projectVersion>
 	</properties>
 
 	<dependencies>
