@@ -1,13 +1,17 @@
 package io.vepo.twitter4j;
 
+import static java.util.Objects.nonNull;
 import static java.util.stream.Collectors.toList;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpRequest.BodyPublishers;
 import java.net.http.HttpResponse.BodyHandlers;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
@@ -44,7 +48,7 @@ public class TwitterClient {
         public TwitterClient consume(Consumer<Tweet> tweetConsumer) {
             executor.submit(this::removeOldrules);
             executor.submit(this::createRules);
-            executor.submit(this::consumeStream);
+            executor.submit(() -> consumeStream(tweetConsumer));
             return TwitterClient.this;
         }
 
@@ -99,7 +103,7 @@ public class TwitterClient {
             }
         }
 
-        private void consumeStream() {
+        private void consumeStream(Consumer<Tweet> tweetConsumer) {
             try {
                 System.out.println("Consumer");
                 var request = HttpRequest.newBuilder()
@@ -108,7 +112,20 @@ public class TwitterClient {
                                          .header("Authorization", generateAutorizationHeader())
                                          .build();
                 System.out.println("Consumer request=" + request);
-                var response = httpClient.send(request, BodyHandlers.ofString());
+                var response = httpClient.send(request, BodyHandlers.ofInputStream());
+                if (response.statusCode() == 200) {
+                    try (BufferedReader reader =
+                            new BufferedReader(new InputStreamReader(response.body(), Charset.forName("UTF-8")))) {
+                        String line;
+                        do {
+                            line = reader.readLine();
+                            if (nonNull(line)) {
+                                tweetConsumer.accept(objectMapper.readValue(line, Tweet.class));
+                            }
+                        } while (nonNull(line));
+
+                    }
+                }
                 System.out.println("Consumer response=" + response);
             } catch (IOException e) {
                 e.printStackTrace();

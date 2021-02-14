@@ -26,6 +26,11 @@ public class Rule {
         }
 
         @Override
+        public RootGroupRuleBuilder isRetweet() {
+            return (RootGroupRuleBuilder) super.isRetweet();
+        }
+
+        @Override
         public SubGroupRuleBuilder with() {
             return super.with();
         }
@@ -77,6 +82,11 @@ public class Rule {
         }
 
         @Override
+        public RuleBuilder isRetweet() {
+            return (RuleBuilder) super.isRetweet();
+        }
+
+        @Override
         public RuleBuilder or() {
             return (RuleBuilder) super.or();
         }
@@ -90,6 +100,11 @@ public class Rule {
         @Override
         public RuleBuilder withImages() {
             return (RuleBuilder) super.withImages();
+        }
+
+        public RuleBuilder withLanguage(Language language) {
+            this.language = language;
+            return this;
         }
 
         @Override
@@ -118,11 +133,6 @@ public class Rule {
             return (RuleBuilder) super.withToken(token);
         }
 
-        public RuleBuilder withLanguage(Language language) {
-            this.language = language;
-            return this;
-        }
-
     }
 
     public static class SubGroupRuleBuilder extends SubRuleBuilder {
@@ -137,6 +147,11 @@ public class Rule {
             this.parent.value.append(this.value);
             this.parent.value.append(")");
             return parent;
+        }
+
+        @Override
+        public SubGroupRuleBuilder isRetweet() {
+            return (SubGroupRuleBuilder) super.isRetweet();
         }
 
         @Override
@@ -175,6 +190,11 @@ public class Rule {
 
         private SubRuleBuilder() {
             value = new StringBuilder();
+        }
+
+        public SubRuleBuilder isRetweet() {
+            this.value.append(" is:retweet");
+            return this;
         }
 
         public SubRuleBuilder or() {
