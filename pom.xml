@@ -15,7 +15,7 @@
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 		<sonar.projectVersion>${project.version}</sonar.projectVersion>
 		<sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
-		<sonar.coverage.jacoco.xmlReportPaths>${project.build.directory}/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+		<sonar.coverage.jacoco.xmlReportPaths>${project.build.directory}/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
 	</properties>
 
 	<dependencies>
@@ -82,14 +82,6 @@
 				<groupId>org.sonarsource.scanner.maven</groupId>
 				<artifactId>sonar-maven-plugin</artifactId>
 				<version>3.8.0.2131</version>
-				<executions>
-					<execution>
-						<phase>verify</phase>
-						<goals>
-							<goal>sonar</goal>
-						</goals>
-					</execution>
-				</executions>
 			</plugin>
 			<plugin>
 				<groupId>org.jacoco</groupId>
@@ -102,7 +94,6 @@
 							<goal>prepare-agent</goal>
 						</goals>
 						<configuration>
-							<destFile>${sonar.coverage.jacoco.xmlReportPaths}</destFile>
 							<append>true</append>
 						</configuration>
 					</execution>
@@ -128,9 +119,6 @@
 						<goals>
 							<goal>report</goal>
 						</goals>
-						<configuration>
-							<dataFile>${sonar.coverage.jacoco.xmlReportPaths}</dataFile>
-						</configuration>
 					</execution>
 				</executions>
 			</plugin>
