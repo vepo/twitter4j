@@ -30,6 +30,7 @@ import io.vepo.twitter4j.TwitterClientException.CauseType;
 import io.vepo.twitter4j.api.GetStreamRulesResponse;
 import io.vepo.twitter4j.api.RuleData;
 import io.vepo.twitter4j.api.RulesDeleteIds;
+import io.vepo.twitter4j.api.TwitterOAuth2Token;
 import io.vepo.twitter4j.api.UpdateStreamRulesRequest;
 import io.vepo.twitter4j.api.UpdateStreamRulesResponse;
 
@@ -190,7 +191,7 @@ public class TwitterClient {
     private String apiKey;
     private String apiKeySecret;
     private ObjectMapper objectMapper;
-    private TwiiterOAuth2Token oauth2Token;
+    private TwitterOAuth2Token oauth2Token;
     private HttpClient httpClient;
     private ExecutorService executor;
 
@@ -213,7 +214,7 @@ public class TwitterClient {
                                          .build();
             var response = httpClient.send(authRequest, BodyHandlers.ofString());
             switch (response.statusCode()) {
-                case 200 -> this.oauth2Token = objectMapper.readValue(response.body(), TwiiterOAuth2Token.class);
+                case 200 -> this.oauth2Token = objectMapper.readValue(response.body(), TwitterOAuth2Token.class);
                 case 403 -> throw new TwitterClientException(CauseType.INVALID_CREDENTIALS);
                 case 500 -> throw new TwitterClientException(CauseType.SERVER_ERROR);
                 default -> throw new IllegalArgumentException("Unexpected value: " + response.statusCode());

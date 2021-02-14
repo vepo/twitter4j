@@ -1,8 +1,8 @@
-package io.vepo.twitter4j;
+package io.vepo.twitter4j.api;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class TwiiterOAuth2Token {
+public class TwitterOAuth2Token {
     @JsonProperty("token_type")
     private String tokenType;
 
@@ -42,7 +42,7 @@ public class TwiiterOAuth2Token {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        TwiiterOAuth2Token other = (TwiiterOAuth2Token) obj;
+        TwitterOAuth2Token other = (TwitterOAuth2Token) obj;
         if (accessToken == null) {
             if (other.accessToken != null)
                 return false;
@@ -58,7 +58,7 @@ public class TwiiterOAuth2Token {
 
     @Override
     public String toString() {
-        return "TwiiterOAuth2Token [tokenType=" + tokenType + ", accessToken=" + accessToken + "]";
+        return "TwitterOAuth2Token [tokenType=" + tokenType + ", accessToken=" + accessToken + "]";
     }
 
 }
