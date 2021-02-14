@@ -72,7 +72,6 @@ public class TwitterClient {
 
                 System.out.println(response.body());
             } catch (IOException e) {
-                e.printStackTrace();
                 throw new TwitterClientException(CauseType.IO_EXCEPTION, e);
             } catch (InterruptedException e) {
                 // Finishing
@@ -128,7 +127,6 @@ public class TwitterClient {
                 }
                 System.out.println("Consumer response=" + response);
             } catch (IOException e) {
-                e.printStackTrace();
                 throw new TwitterClientException(CauseType.IO_EXCEPTION, e);
             } catch (InterruptedException e) {
                 // Finishing
