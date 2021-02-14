@@ -12,6 +12,10 @@
 	<properties>
 		<maven.compiler.source>15</maven.compiler.source>
 		<maven.compiler.target>15</maven.compiler.target>
+
+		<sonar.projectKey>vepo_twitter4j</sonar.projectKey>
+		<sonar.organization>vepo-github</sonar.organization>
+		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 	</properties>
 
 	<dependencies>
