@@ -26,11 +26,6 @@ public class Rule {
         }
 
         @Override
-        public SubGroupRuleBuilder group() {
-            return super.group();
-        }
-
-        @Override
         public RootGroupRuleBuilder isRetweet() {
             return (RootGroupRuleBuilder) super.isRetweet();
         }
@@ -59,7 +54,6 @@ public class Rule {
         public SubGroupRuleBuilder withoutGroup() {
             return super.withoutGroup();
         }
-        
 
         @Override
         public RootGroupRuleBuilder withToken(String token) {
@@ -176,13 +170,8 @@ public class Rule {
         }
 
         @Override
-        public SubGroupRuleBuilder withoutGroup() {
-            return super.withoutGroup();
-        }
-
-        @Override
-        public SubRuleBuilder withToken(String token) {
-            return super.withToken(token);
+        public SubGroupRuleBuilder withToken(String token) {
+            return (SubGroupRuleBuilder) super.withToken(token);
         }
     }
 
