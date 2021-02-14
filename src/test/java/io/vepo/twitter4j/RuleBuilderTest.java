@@ -14,4 +14,19 @@ class RuleBuilderTest {
         Assertions.assertEquals("token", rule.getValue());
         Assertions.assertEquals("Token", rule.getTag());
     }
+
+    @Test
+    @DisplayName("Token + Group")
+    void groupTokenTest() {
+        var rule = Rule.builder()
+                       .withToken("token")
+                       .group()
+                           .withImages()
+                           .or()
+                           .withLinks()
+                       .end()
+                       .applyTag("Token");
+        Assertions.assertEquals("token (has:images OR has:links)", rule.getValue());
+        Assertions.assertEquals("Token", rule.getTag());
+    }
 }

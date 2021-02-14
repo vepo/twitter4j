@@ -31,6 +31,11 @@ public class Rule {
         }
 
         @Override
+        public RootGroupRuleBuilder or() {
+            return (RootGroupRuleBuilder) super.or();
+        }
+
+        @Override
         public RootGroupRuleBuilder withImages() {
             return (RootGroupRuleBuilder) super.withImages();
         }
@@ -48,11 +53,6 @@ public class Rule {
         @Override
         public RootGroupRuleBuilder withMentions() {
             return (RootGroupRuleBuilder) super.withMentions();
-        }
-
-        @Override
-        public SubGroupRuleBuilder withoutGroup() {
-            return super.withoutGroup();
         }
 
         @Override
@@ -139,7 +139,7 @@ public class Rule {
         }
 
         public SubRuleBuilder end() {
-            this.parent.value.append(this.value);
+            this.parent.value.append(this.value.toString().trim());
             this.parent.value.append(")");
             return parent;
         }
@@ -193,7 +193,7 @@ public class Rule {
         }
 
         public SubRuleBuilder or() {
-            this.value.append(" OR ");
+            this.value.append(" OR");
             return this;
         }
 
