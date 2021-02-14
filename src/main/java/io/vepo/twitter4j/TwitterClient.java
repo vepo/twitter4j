@@ -20,6 +20,9 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.function.Consumer;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -31,6 +34,8 @@ import io.vepo.twitter4j.api.UpdateStreamRulesRequest;
 import io.vepo.twitter4j.api.UpdateStreamRulesResponse;
 
 public class TwitterClient {
+    private static final Logger logger = LoggerFactory.getLogger(TwitterClient.class);
+
     public class TwitterStreamClient {
 
         private List<Rule> rules;
@@ -40,7 +45,7 @@ public class TwitterClient {
         }
 
         public TwitterStreamClient with(Rule rule) {
-            System.out.println("Adding rule: " + rule);
+            logger.debug("Adding rule: {}", rule);
             this.rules.add(rule);
             return this;
         }
@@ -54,13 +59,13 @@ public class TwitterClient {
 
         private void removeOldrules() {
             try {
-                System.out.println("Consumer");
+                logger.trace("Removing old rules...");
                 var request = HttpRequest.newBuilder()
                                          .uri(URI.create("https://api.twitter.com/2/tweets/search/stream/rules"))
                                          .GET()
                                          .header("Authorization", generateAutorizationHeader())
                                          .build();
-                System.out.println("Remove rules request=" + request);
+                logger.trace("Old rules request: {}", request);
                 var response = httpClient.send(request, BodyHandlers.ofString());
                 if (response.statusCode() == 200) {
                     var body = objectMapper.readValue(response.body(), GetStreamRulesResponse.class);
@@ -68,10 +73,9 @@ public class TwitterClient {
                         deleteRules(body.getData().stream().map(RuleData::getId).collect(toList()));
                     }
                 }
-                System.out.println("Remove rules response=" + response);
-
-                System.out.println(response.body());
+                logger.trace("Old rules response: {}", response);
             } catch (IOException e) {
+                logger.error("Error!", e);
                 throw new TwitterClientException(CauseType.IO_EXCEPTION, e);
             } catch (InterruptedException e) {
                 // Finishing
@@ -81,6 +85,7 @@ public class TwitterClient {
 
         private void deleteRules(List<String> ids) {
             if (!ids.isEmpty()) {
+                logger.trace("Deleting all rules...");
                 try {
                     var request = HttpRequest.newBuilder()
                                              .uri(URI.create("https://api.twitter.com/2/tweets/search/stream/rules"))
@@ -88,12 +93,14 @@ public class TwitterClient {
                                              .header("Content-Type", "application/json")
                                              .header("Authorization", generateAutorizationHeader())
                                              .build();
-                    System.out.println("Stream request: " + request);
+                    logger.trace("Delete all rules request: {}", request);
                     var response = httpClient.send(request, BodyHandlers.ofString());
-                    System.out.println("Delete old rules: " + response);
+                    logger.trace("Delete all rules response: {}", response);
                 } catch (JsonProcessingException e) {
+                    logger.error("Error!", e);
                     throw new TwitterClientException(CauseType.SERIALIZATION_ERROR, e);
                 } catch (IOException e) {
+                    logger.error("Error!", e);
                     throw new TwitterClientException(CauseType.IO_EXCEPTION, e);
                 } catch (InterruptedException e) {
                     // Finishing
@@ -104,14 +111,15 @@ public class TwitterClient {
 
         private void consumeStream(Consumer<Tweet> tweetConsumer) {
             try {
-                System.out.println("Consumer");
+                logger.trace("Starting consumer...");
                 var request = HttpRequest.newBuilder()
                                          .uri(URI.create("https://api.twitter.com/2/tweets/search/stream?tweet.fields=created_at&expansions=author_id&user.fields=created_at"))
                                          .GET()
                                          .header("Authorization", generateAutorizationHeader())
                                          .build();
-                System.out.println("Consumer request=" + request);
+                logger.trace("Start consumer request: {}", request);
                 var response = httpClient.send(request, BodyHandlers.ofInputStream());
+                logger.trace("Start consumer response: {}", response);
                 if (response.statusCode() == 200) {
                     try (BufferedReader reader =
                             new BufferedReader(new InputStreamReader(response.body(), Charset.forName("UTF-8")))) {
@@ -125,46 +133,45 @@ public class TwitterClient {
 
                     }
                 }
-                System.out.println("Consumer response=" + response);
+                logger.info("Consumer exited!");
             } catch (IOException e) {
+                logger.error("Error!", e);
                 throw new TwitterClientException(CauseType.IO_EXCEPTION, e);
             } catch (InterruptedException e) {
                 // Finishing
                 Thread.currentThread().interrupt();
             }
-            System.out.println("Why!?!?");
         }
 
         private void createRules() {
-            System.out.println("Creating Stream...");
             if (this.rules.isEmpty()) {
                 throw new IllegalStateException("Add at least one rule!");
             }
             try {
+                logger.trace("Creating rules...");
                 var request = HttpRequest.newBuilder()
                                          .uri(URI.create("https://api.twitter.com/2/tweets/search/stream/rules"))
                                          .POST(BodyPublishers.ofString(objectMapper.writeValueAsString(new UpdateStreamRulesRequest(rules))))
                                          .header("Content-Type", "application/json")
                                          .header("Authorization", generateAutorizationHeader())
                                          .build();
-                System.out.println("Stream request: " + request);
+                logger.trace("Create rules request: {}", request);
                 var response = httpClient.send(request, BodyHandlers.ofString());
-                System.out.println(response.body());
+                logger.trace("Create rules response: {}", response);
                 if (response.statusCode() == 201) {
                     var data = objectMapper.readValue(response.body(), UpdateStreamRulesResponse.class);
                     if (hasErrors(data)) {
-                        System.out.println("ERROR: " + data);
+                        logger.error("Rules has errors: {}", data);
                         throw new TwitterClientException(CauseType.INVALID_RESPONSE);
-                    } else {
-                        System.out.println("No Errors! " + data);
                     }
                 } else {
-                    System.out.println(response);
+                    logger.warn("Unexpected status code! status={} answer={}", response.statusCode(), response.body());
                 }
-                System.out.println("DONE");
             } catch (JsonProcessingException e) {
+                logger.error("Error!", e);
                 throw new TwitterClientException(CauseType.SERIALIZATION_ERROR, e);
             } catch (IOException e) {
+                logger.error("Error!", e);
                 throw new TwitterClientException(CauseType.IO_EXCEPTION, e);
             } catch (InterruptedException e) {
                 // Finishing
@@ -197,6 +204,7 @@ public class TwitterClient {
 
     public TwitterClient authenticate() {
         try {
+            logger.trace("Starting authentication...");
             var authRequest = HttpRequest.newBuilder()
                                          .uri(URI.create("https://api.twitter.com/oauth2/token"))
                                          .POST(BodyPublishers.ofString("grant_type=client_credentials"))
@@ -210,10 +218,12 @@ public class TwitterClient {
                 case 500 -> throw new TwitterClientException(CauseType.SERVER_ERROR);
                 default -> throw new IllegalArgumentException("Unexpected value: " + response.statusCode());
             }
-            System.out.println("Autenticado! " + this.oauth2Token);
+            logger.info("Authenticated!");
         } catch (JsonProcessingException e) {
+            logger.error("Error!", e);
             throw new TwitterClientException(CauseType.INVALID_RESPONSE, e);
         } catch (IOException e) {
+            logger.error("Error!", e);
             throw new TwitterClientException(CauseType.IO_EXCEPTION, e);
         } catch (InterruptedException e) {
             // Finishing
