@@ -1,6 +1,6 @@
 package io.vepo.twitter4j.api;
 
-public class AddStreamRulesError {
+public class UpdateStreamRulesError {
     private String id;
     private String value;
     private String title;

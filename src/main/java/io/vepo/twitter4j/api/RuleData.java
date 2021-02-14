@@ -1,6 +1,6 @@
 package io.vepo.twitter4j.api;
 
-public class AddStreamRulesData {
+public class RuleData {
     private String id;
     private String value;
     private String tag;
@@ -31,7 +31,7 @@ public class AddStreamRulesData {
 
     @Override
     public String toString() {
-        return "AddStreamRulesData [id=" + id + ", value=" + value + ", tag=" + tag + "]";
+        return "RuleData [id=" + id + ", value=" + value + ", tag=" + tag + "]";
     }
 
 }

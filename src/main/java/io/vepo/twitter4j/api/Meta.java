@@ -20,4 +20,9 @@ public class Meta {
         this.summary = summary;
     }
 
+    @Override
+    public String toString() {
+        return "Meta [sent=" + sent + ", summary=" + summary + "]";
+    }
+
 }

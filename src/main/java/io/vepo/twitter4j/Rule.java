@@ -1,6 +1,18 @@
 package io.vepo.twitter4j;
 
+import static java.util.Objects.nonNull;
+
 public class Rule {
+    public enum Language {
+        Portuguese("pt"), English("en");
+
+        private String lang;
+
+        Language(String lang) {
+            this.lang = lang;
+        }
+
+    }
 
     public static class RootGroupRuleBuilder extends SubGroupRuleBuilder {
 
@@ -50,11 +62,17 @@ public class Rule {
     }
 
     public static class RuleBuilder extends SubRuleBuilder {
+        private Language language;
+
         private RuleBuilder() {
             super();
+            this.language = null;
         }
 
         public Rule applyTag(String tag) {
+            if (nonNull(language)) {
+                this.value.append(" lang:").append(this.language.lang);
+            }
             return new Rule(value.toString().trim(), tag);
         }
 
@@ -98,6 +116,11 @@ public class Rule {
         @Override
         public RuleBuilder withToken(String token) {
             return (RuleBuilder) super.withToken(token);
+        }
+
+        public RuleBuilder withLanguage(Language language) {
+            this.language = language;
+            return this;
         }
 
     }

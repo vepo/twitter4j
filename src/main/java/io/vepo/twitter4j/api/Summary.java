@@ -5,12 +5,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Summary {
 
     private int created;
-    
+
     @JsonProperty("not_created")
     private int notCreated;
-    
+
     private int valid;
-    
+
     private int invalid;
 
     public int getCreated() {
@@ -43,6 +43,12 @@ public class Summary {
 
     public void setInvalid(int invalid) {
         this.invalid = invalid;
+    }
+
+    @Override
+    public String toString() {
+        return "Summary [created=" + created + ", notCreated=" + notCreated + ", valid=" + valid + ", invalid="
+                + invalid + "]";
     }
 
 }

@@ -2,10 +2,10 @@ package io.vepo.twitter4j.api;
 
 import java.util.List;
 
-public class AddStreamRulesResponse {
+public class UpdateStreamRulesResponse {
     private Meta meta;
-    private List<AddStreamRulesError> errors;
-    private List<AddStreamRulesData> data;
+    private List<UpdateStreamRulesError> errors;
+    private List<RuleData> data;
 
     public Meta getMeta() {
         return meta;
@@ -15,19 +15,19 @@ public class AddStreamRulesResponse {
         this.meta = meta;
     }
 
-    public List<AddStreamRulesError> getErrors() {
+    public List<UpdateStreamRulesError> getErrors() {
         return errors;
     }
 
-    public void setErrors(List<AddStreamRulesError> errors) {
+    public void setErrors(List<UpdateStreamRulesError> errors) {
         this.errors = errors;
     }
 
-    public List<AddStreamRulesData> getData() {
+    public List<RuleData> getData() {
         return data;
     }
 
-    public void setData(List<AddStreamRulesData> data) {
+    public void setData(List<RuleData> data) {
         this.data = data;
     }
 
