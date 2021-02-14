@@ -3,16 +3,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.vepo</groupId>
-	<artifactId>twitter4j</artifactId>
+	<artifactId>io.vepo.twitter4j</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Java Library for Twitter Bot</name>
 	<description>Emcapsulate Twitter API on a library</description>
 	<packaging>jar</packaging>
 
 	<properties>
-		<maven.compiler.source>15</maven.compiler.source>
-		<maven.compiler.target>15</maven.compiler.target>
-
 		<sonar.projectKey>vepo_twitter4j</sonar.projectKey>
 		<sonar.organization>vepo-github</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
@@ -30,4 +27,20 @@
 			<version>2.11.1</version>
 		</dependency>
 	</dependencies>
+
+	<build>
+		<finalName>twitter4j</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.0</version>
+				<configuration>
+					<source>15</source>
+					<target>15</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>

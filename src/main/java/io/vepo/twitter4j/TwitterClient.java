@@ -119,7 +119,7 @@ public class TwitterClient {
                         String line;
                         do {
                             line = reader.readLine();
-                            if (nonNull(line)) {
+                            if (nonNull(line) && !line.isBlank()) {
                                 tweetConsumer.accept(objectMapper.readValue(line, Tweet.class));
                             }
                         } while (nonNull(line));
