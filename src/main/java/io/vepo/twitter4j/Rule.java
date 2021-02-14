@@ -21,18 +21,18 @@ public class Rule {
         }
 
         @Override
-        public RuleBuilder endGroup() {
-            return (RuleBuilder) super.endGroup();
+        public RuleBuilder end() {
+            return (RuleBuilder) super.end();
+        }
+
+        @Override
+        public SubGroupRuleBuilder group() {
+            return super.group();
         }
 
         @Override
         public RootGroupRuleBuilder isRetweet() {
             return (RootGroupRuleBuilder) super.isRetweet();
-        }
-
-        @Override
-        public SubGroupRuleBuilder with() {
-            return super.with();
         }
 
         @Override
@@ -56,9 +56,10 @@ public class Rule {
         }
 
         @Override
-        public SubGroupRuleBuilder without() {
-            return super.without();
+        public SubGroupRuleBuilder withoutGroup() {
+            return super.withoutGroup();
         }
+        
 
         @Override
         public RootGroupRuleBuilder withToken(String token) {
@@ -82,6 +83,12 @@ public class Rule {
         }
 
         @Override
+        public RootGroupRuleBuilder group() {
+            this.value.append(" (");
+            return new RootGroupRuleBuilder(this);
+        }
+
+        @Override
         public RuleBuilder isRetweet() {
             return (RuleBuilder) super.isRetweet();
         }
@@ -89,12 +96,6 @@ public class Rule {
         @Override
         public RuleBuilder or() {
             return (RuleBuilder) super.or();
-        }
-
-        @Override
-        public RootGroupRuleBuilder with() {
-            this.value.append(" (");
-            return new RootGroupRuleBuilder(this);
         }
 
         @Override
@@ -123,7 +124,7 @@ public class Rule {
         }
 
         @Override
-        public RootGroupRuleBuilder without() {
+        public RootGroupRuleBuilder withoutGroup() {
             this.value.append(" -(");
             return new RootGroupRuleBuilder(this);
         }
@@ -143,7 +144,7 @@ public class Rule {
             this.parent = parent;
         }
 
-        public SubRuleBuilder endGroup() {
+        public SubRuleBuilder end() {
             this.parent.value.append(this.value);
             this.parent.value.append(")");
             return parent;
@@ -175,8 +176,8 @@ public class Rule {
         }
 
         @Override
-        public SubGroupRuleBuilder without() {
-            return super.without();
+        public SubGroupRuleBuilder withoutGroup() {
+            return super.withoutGroup();
         }
 
         @Override
@@ -192,6 +193,11 @@ public class Rule {
             value = new StringBuilder();
         }
 
+        public SubGroupRuleBuilder group() {
+            this.value.append(" (");
+            return new SubGroupRuleBuilder(this);
+        }
+
         public SubRuleBuilder isRetweet() {
             this.value.append(" is:retweet");
             return this;
@@ -200,11 +206,6 @@ public class Rule {
         public SubRuleBuilder or() {
             this.value.append(" OR ");
             return this;
-        }
-
-        public SubGroupRuleBuilder with() {
-            this.value.append(" (");
-            return new SubGroupRuleBuilder(this);
         }
 
         public SubRuleBuilder withImages() {
@@ -227,7 +228,7 @@ public class Rule {
             return this;
         }
 
-        public SubGroupRuleBuilder without() {
+        public SubGroupRuleBuilder withoutGroup() {
             this.value.append(" -(");
             return new SubGroupRuleBuilder(this);
         }
