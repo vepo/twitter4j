@@ -64,11 +64,17 @@
 				<version>3.0.0-M5</version>
 				<configuration>
 					<argLine>
-						--add-modules ALL-SYSTEM
-						--add-opens java.base/jdk.internal.util=ALL-UNNAMED
-						--add-opens io.vepo.twitter4j/io.vepo.twitter4j=ALL-UNNAMED
-						--illegal-access=permit
+						<![CDATA[
+							@{argLine}
+							--add-modules ALL-SYSTEM
+							--add-opens java.base/jdk.internal.util=ALL-UNNAMED
+							--add-opens io.vepo.twitter4j/io.vepo.twitter4j=ALL-UNNAMED
+							--illegal-access=permit
+						]]>
 					</argLine>
+					<systemPropertyVariables>
+						<jacoco.destfile>${project.build.directory}/jacoco.exec</jacoco.destfile>
+					</systemPropertyVariables>
 				</configuration>
 			</plugin>
 			<plugin>
