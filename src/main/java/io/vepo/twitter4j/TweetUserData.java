@@ -1,6 +1,7 @@
 package io.vepo.twitter4j;
 
 import java.util.Date;
+import java.util.Objects;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -58,34 +59,28 @@ public class TweetUserData {
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj)
+        if (this == obj) {
             return true;
-        if (obj == null)
+        }
+
+        if (obj == null) {
             return false;
-        if (getClass() != obj.getClass())
+        }
+
+        if (getClass() != obj.getClass()) {
             return false;
+        }
+
         TweetUserData other = (TweetUserData) obj;
-        if (createdAt == null) {
-            if (other.createdAt != null)
-                return false;
-        } else if (!createdAt.equals(other.createdAt))
+
+        if (!Objects.equals(createdAt, other.createdAt) ||
+                !Objects.equals(id, other.id) ||
+                !Objects.equals(name, other.name) ||
+                !Objects.equals(username, other.username)) {
             return false;
-        if (id == null) {
-            if (other.id != null)
-                return false;
-        } else if (!id.equals(other.id))
-            return false;
-        if (name == null) {
-            if (other.name != null)
-                return false;
-        } else if (!name.equals(other.name))
-            return false;
-        if (username == null) {
-            if (other.username != null)
-                return false;
-        } else if (!username.equals(other.username))
-            return false;
-        return true;
+        } else {
+            return true;
+        }
     }
 
     @Override
