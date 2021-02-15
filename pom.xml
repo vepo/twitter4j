@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.vepo</groupId>
 	<artifactId>io.vepo.twitter4j</artifactId>
-	<version>0.0.2</version>
+	<version>0.0.3-SNAPSHOT</version>
 	<name>Java Library for Twitter Bot</name>
 	<description>Emcapsulate Twitter API on a library</description>
 	<packaging>jar</packaging>
@@ -144,6 +144,6 @@
 		<url>scm:git:https://github.com/vepo/twitter4j.git</url>
 		<connection>scm:git:https://github.com/vepo/twitter4j.git</connection>
 		<developerConnection>scm:git:https://github.com/vepo/twitter4j.git</developerConnection>
-	  <tag>v0.0.2</tag>
+	  <tag>HEAD</tag>
   </scm>
 </project>
