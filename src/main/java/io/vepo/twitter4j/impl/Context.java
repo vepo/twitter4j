@@ -16,7 +16,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import io.vepo.twitter4j.TwitterClient;
@@ -39,13 +38,11 @@ class Context {
     }
 
     String generateAutorizationHeader() {
-        String header;
-        switch (this.oauth2Token.getTokenType()) {
-            case "bearer" -> header = "Bearer " + this.oauth2Token.getAccessToken();
-            default -> throw new IllegalArgumentException("Unexpected value: " + this.oauth2Token.getAccessToken());
+        if (this.oauth2Token.getTokenType().equalsIgnoreCase("bearer")) {
+            return "Bearer " + this.oauth2Token.getAccessToken();
+        } else {
+            throw new IllegalArgumentException("Unexpected value: " + this.oauth2Token.getAccessToken());
         }
-
-        return header;
     }
 
     HttpResponse<String> getStringResponse(HttpRequest request) throws IOException, InterruptedException {
@@ -57,7 +54,7 @@ class Context {
         return httpClient.send(request, BodyHandlers.ofInputStream());
     }
 
-    <T> T readValue(String content, Class<T> contentClass) throws JsonMappingException, JsonProcessingException {
+    <T> T readValue(String content, Class<T> contentClass) throws JsonProcessingException {
         return objectMapper.readValue(content, contentClass);
     }
 
@@ -68,6 +65,7 @@ class Context {
     void join() {
         AtomicBoolean running = new AtomicBoolean(true);
         Runtime.getRuntime().addShutdownHook(new Thread() {
+            @Override
             public void run() {
                 logger.info("Shutdown signal received...");
                 executors.forEach(ExecutorService::shutdown);

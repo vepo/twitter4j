@@ -51,10 +51,8 @@ public class TwitterClientImplementation implements TwitterClient {
             }
             logger.info("Authenticated!");
         } catch (JsonProcessingException e) {
-            logger.error("Error!", e);
             throw new TwitterClientException(CauseType.INVALID_RESPONSE, e);
         } catch (IOException e) {
-            logger.error("Error!", e);
             throw new TwitterClientException(CauseType.IO_EXCEPTION, e);
         } catch (InterruptedException e) {
             // Finishing

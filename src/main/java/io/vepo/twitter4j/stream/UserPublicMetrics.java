@@ -1,7 +1,5 @@
 package io.vepo.twitter4j.stream;
 
-import java.util.Objects;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class UserPublicMetrics {
