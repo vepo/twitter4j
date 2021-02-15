@@ -1,10 +1,8 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.vepo</groupId>
 	<artifactId>io.vepo.twitter4j</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.3-SNAPSHOT</version>
 	<name>Java Library for Twitter Bot</name>
 	<description>Emcapsulate Twitter API on a library</description>
 	<packaging>jar</packaging>
@@ -142,4 +140,10 @@
 			</plugin>
 		</plugins>
 	</build>
+	<scm>
+		<url>scm:git:https://github.com/vepo/twitter4j.git</url>
+		<connection>scm:git:https://github.com/vepo/twitter4j.git</connection>
+		<developerConnection>scm:git:https://github.com/vepo/twitter4j.git</developerConnection>
+	  <tag>HEAD</tag>
+  </scm>
 </project>
