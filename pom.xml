@@ -93,6 +93,7 @@
 							--add-modules ALL-SYSTEM
 							--add-opens java.base/jdk.internal.util=ALL-UNNAMED
 							--add-opens io.vepo.twitter4j/io.vepo.twitter4j=ALL-UNNAMED
+							--add-opens io.vepo.twitter4j/io.vepo.twitter4j.stream=ALL-UNNAMED
 							--illegal-access=permit
 						]]>
 					</argLine>

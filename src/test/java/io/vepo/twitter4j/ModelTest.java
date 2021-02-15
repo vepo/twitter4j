@@ -20,6 +20,11 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jparams.verifier.tostring.ToStringVerifier;
 
+import io.vepo.twitter4j.stream.TweetInfo;
+import io.vepo.twitter4j.stream.TweetInfoData;
+import io.vepo.twitter4j.stream.TweetInfoIncludes;
+import io.vepo.twitter4j.stream.TweetInfoIncludesUserData;
+import io.vepo.twitter4j.stream.TweetMatchingRule;
 import nl.jqno.equalsverifier.EqualsVerifier;
 
 @DisplayName("Test Model")
