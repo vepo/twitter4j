@@ -34,29 +34,23 @@ public class ContextAnnotation {
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj)
+        if (this == obj) {
             return true;
-        if (obj == null)
+        }
+        if (obj == null) {
             return false;
-        if (getClass() != obj.getClass())
+        }
+        if (getClass() != obj.getClass()) {
             return false;
+        }
         ContextAnnotation other = (ContextAnnotation) obj;
-        if (domain == null) {
-            if (other.domain != null)
-                return false;
-        } else if (!domain.equals(other.domain))
-            return false;
-        if (entity == null) {
-            if (other.entity != null)
-                return false;
-        } else if (!entity.equals(other.entity))
-            return false;
-        return true;
+        return Objects.equals(domain, other.domain) &&
+                Objects.equals(entity, other.entity);
     }
 
     @Override
     public String toString() {
-        return "ContextAnnotation [domain=" + domain + ", entity=" + entity + "]";
+        return String.format("ContextAnnotation [domain=%s, entity=%s]", domain, entity);
     }
 
 }

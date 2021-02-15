@@ -1,5 +1,7 @@
 package io.vepo.twitter4j.stream;
 
+import java.util.Objects;
+
 public class TweetHashtag {
     private int start;
     private int end;
@@ -33,36 +35,32 @@ public class TweetHashtag {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + end;
-        result = prime * result + start;
-        result = prime * result + ((tag == null) ? 0 : tag.hashCode());
+        result = prime * result + Integer.hashCode(end);
+        result = prime * result + Integer.hashCode(start);
+        result = prime * result + Objects.hashCode(tag);
         return result;
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj)
+        if (this == obj) {
             return true;
-        if (obj == null)
+        }
+        if (obj == null) {
             return false;
-        if (getClass() != obj.getClass())
+        }
+        if (getClass() != obj.getClass()) {
             return false;
+        }
         TweetHashtag other = (TweetHashtag) obj;
-        if (end != other.end)
-            return false;
-        if (start != other.start)
-            return false;
-        if (tag == null) {
-            if (other.tag != null)
-                return false;
-        } else if (!tag.equals(other.tag))
-            return false;
-        return true;
+        return end == other.end &&
+                start == other.start &&
+                Objects.equals(tag, other.tag);
     }
 
     @Override
     public String toString() {
-        return "TweetHashtag [start=" + start + ", end=" + end + ", tag=" + tag + "]";
+        return String.format("TweetHashtag [start=%s, end=%s, tag=%s]", start, end, tag);
     }
 
 }

@@ -44,34 +44,24 @@ public class ContextAnnotationDomain {
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj)
+        if (this == obj) {
             return true;
-        if (obj == null)
+        }
+        if (obj == null) {
             return false;
-        if (getClass() != obj.getClass())
+        }
+        if (getClass() != obj.getClass()) {
             return false;
+        }
         ContextAnnotationDomain other = (ContextAnnotationDomain) obj;
-        if (description == null) {
-            if (other.description != null)
-                return false;
-        } else if (!description.equals(other.description))
-            return false;
-        if (id == null) {
-            if (other.id != null)
-                return false;
-        } else if (!id.equals(other.id))
-            return false;
-        if (name == null) {
-            if (other.name != null)
-                return false;
-        } else if (!name.equals(other.name))
-            return false;
-        return true;
+        return Objects.equals(description, other.description) &&
+                Objects.equals(name, other.name) &&
+                Objects.equals(id, other.id);
     }
 
     @Override
     public String toString() {
-        return "ContextAnnotationDomain [id=" + id + ", name=" + name + ", description=" + description + "]";
+        return String.format("ContextAnnotationDomain [id=%s, name=%s, description=%s]", id, name, description);
     }
 
 }

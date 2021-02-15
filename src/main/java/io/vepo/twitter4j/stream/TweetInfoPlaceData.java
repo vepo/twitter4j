@@ -1,12 +1,14 @@
 package io.vepo.twitter4j.stream;
 
+import java.util.Objects;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class TweetInfoPlaceData {
     @JsonProperty("full_name")
     private String fullName;
     private String name;
-    private GetData geo;
+    private GeoData geo;
     private String id;
     @JsonProperty("place_type")
     private String placeType;
@@ -30,11 +32,11 @@ public class TweetInfoPlaceData {
         this.name = name;
     }
 
-    public GetData getGeo() {
+    public GeoData getGeo() {
         return geo;
     }
 
-    public void setGeo(GetData geo) {
+    public void setGeo(GeoData geo) {
         this.geo = geo;
     }
 
@@ -74,67 +76,41 @@ public class TweetInfoPlaceData {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((country == null) ? 0 : country.hashCode());
-        result = prime * result + ((countryCode == null) ? 0 : countryCode.hashCode());
-        result = prime * result + ((fullName == null) ? 0 : fullName.hashCode());
-        result = prime * result + ((geo == null) ? 0 : geo.hashCode());
-        result = prime * result + ((id == null) ? 0 : id.hashCode());
-        result = prime * result + ((name == null) ? 0 : name.hashCode());
-        result = prime * result + ((placeType == null) ? 0 : placeType.hashCode());
+        result = prime * result + Objects.hashCode(country);
+        result = prime * result + Objects.hashCode(countryCode);
+        result = prime * result + Objects.hashCode(fullName);
+        result = prime * result + Objects.hashCode(geo);
+        result = prime * result + Objects.hashCode(id);
+        result = prime * result + Objects.hashCode(name);
+        result = prime * result + Objects.hashCode(placeType);
         return result;
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj)
+        if (this == obj) {
             return true;
-        if (obj == null)
+        }
+        if (obj == null) {
             return false;
-        if (getClass() != obj.getClass())
+        }
+        if (getClass() != obj.getClass()) {
             return false;
+        }
         TweetInfoPlaceData other = (TweetInfoPlaceData) obj;
-        if (country == null) {
-            if (other.country != null)
-                return false;
-        } else if (!country.equals(other.country))
-            return false;
-        if (countryCode == null) {
-            if (other.countryCode != null)
-                return false;
-        } else if (!countryCode.equals(other.countryCode))
-            return false;
-        if (fullName == null) {
-            if (other.fullName != null)
-                return false;
-        } else if (!fullName.equals(other.fullName))
-            return false;
-        if (geo == null) {
-            if (other.geo != null)
-                return false;
-        } else if (!geo.equals(other.geo))
-            return false;
-        if (id == null) {
-            if (other.id != null)
-                return false;
-        } else if (!id.equals(other.id))
-            return false;
-        if (name == null) {
-            if (other.name != null)
-                return false;
-        } else if (!name.equals(other.name))
-            return false;
-        if (placeType == null) {
-            if (other.placeType != null)
-                return false;
-        } else if (!placeType.equals(other.placeType))
-            return false;
-        return true;
+        return Objects.equals(country, other.country) &&
+                Objects.equals(countryCode, other.countryCode) &&
+                Objects.equals(fullName, other.fullName) &&
+                Objects.equals(geo, other.geo) &&
+                Objects.equals(id, other.id) &&
+                Objects.equals(name, other.name) &&
+                Objects.equals(placeType, other.placeType);
     }
 
     @Override
     public String toString() {
-        return "TweetInfoPlaceData [fullName=" + fullName + ", name=" + name + ", geo=" + geo + ", id=" + id
-                + ", placeType=" + placeType + ", countryCode=" + countryCode + ", country=" + country + "]";
+        return String.format("TweetInfoPlaceData [fullName=%s, name=%s, geo=%s, id=%s, placeType=%s, countryCode=%s, country=%s]",
+                             fullName, name, geo, id, placeType, countryCode, country);
     }
 
 }

@@ -1,5 +1,7 @@
 package io.vepo.twitter4j.stream;
 
+import java.util.Objects;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class GeoReference {
@@ -18,29 +20,27 @@ public class GeoReference {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((placeId == null) ? 0 : placeId.hashCode());
+        result = prime * result + Objects.hashCode(placeId);
         return result;
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj)
+        if (this == obj) {
             return true;
-        if (obj == null)
+        }
+        if (obj == null) {
             return false;
-        if (getClass() != obj.getClass())
+        }
+        if (getClass() != obj.getClass()) {
             return false;
+        }
         GeoReference other = (GeoReference) obj;
-        if (placeId == null) {
-            if (other.placeId != null)
-                return false;
-        } else if (!placeId.equals(other.placeId))
-            return false;
-        return true;
+        return Objects.equals(placeId, other.placeId);
     }
 
     @Override
     public String toString() {
-        return "GeoData [placeId=" + placeId + "]";
+        return String.format("GeoReference [placeId=%s]", placeId);
     }
 }

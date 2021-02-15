@@ -1,6 +1,7 @@
 package io.vepo.twitter4j.stream;
 
 import java.util.List;
+import java.util.Objects;
 
 public class TweetInfoDataEntities {
     private List<EntityMention> mentions;
@@ -44,49 +45,35 @@ public class TweetInfoDataEntities {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((annotations == null) ? 0 : annotations.hashCode());
-        result = prime * result + ((hashtags == null) ? 0 : hashtags.hashCode());
-        result = prime * result + ((mentions == null) ? 0 : mentions.hashCode());
-        result = prime * result + ((urls == null) ? 0 : urls.hashCode());
+        result = prime * result + Objects.hashCode(annotations);
+        result = prime * result + Objects.hashCode(hashtags);
+        result = prime * result + Objects.hashCode(mentions);
+        result = prime * result + Objects.hashCode(urls);
         return result;
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj)
+        if (this == obj) {
             return true;
-        if (obj == null)
+        }
+        if (obj == null) {
             return false;
-        if (getClass() != obj.getClass())
+        }
+        if (getClass() != obj.getClass()) {
             return false;
+        }
         TweetInfoDataEntities other = (TweetInfoDataEntities) obj;
-        if (annotations == null) {
-            if (other.annotations != null)
-                return false;
-        } else if (!annotations.equals(other.annotations))
-            return false;
-        if (hashtags == null) {
-            if (other.hashtags != null)
-                return false;
-        } else if (!hashtags.equals(other.hashtags))
-            return false;
-        if (mentions == null) {
-            if (other.mentions != null)
-                return false;
-        } else if (!mentions.equals(other.mentions))
-            return false;
-        if (urls == null) {
-            if (other.urls != null)
-                return false;
-        } else if (!urls.equals(other.urls))
-            return false;
-        return true;
+        return Objects.equals(annotations, other.annotations) &&
+                Objects.equals(hashtags, other.hashtags) &&
+                Objects.equals(mentions, other.mentions) &&
+                Objects.equals(urls, other.urls);
     }
 
     @Override
     public String toString() {
-        return "TweetInfoDataEntities [mentions=" + mentions + ", annotations=" + annotations + ", urls=" + urls
-                + ", hashtags=" + hashtags + "]";
+        return String.format("TweetInfoDataEntities [mentions=%s, annotations=%s, urls=%s, hashtags=%s]", mentions,
+                             annotations, urls, hashtags);
     }
 
 }

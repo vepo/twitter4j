@@ -188,105 +188,40 @@ public class TweetInfoData {
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj)
+        if (this == obj) {
             return true;
-        if (obj == null)
+        }
+        if (obj == null) {
             return false;
-        if (getClass() != obj.getClass())
+        }
+        if (getClass() != obj.getClass()) {
             return false;
+        }
         TweetInfoData other = (TweetInfoData) obj;
-        if (attachments == null) {
-            if (other.attachments != null)
-                return false;
-        } else if (!attachments.equals(other.attachments))
-            return false;
-        if (authorId == null) {
-            if (other.authorId != null)
-                return false;
-        } else if (!authorId.equals(other.authorId))
-            return false;
-        if (contextAnnotations == null) {
-            if (other.contextAnnotations != null)
-                return false;
-        } else if (!contextAnnotations.equals(other.contextAnnotations))
-            return false;
-        if (conversationId == null) {
-            if (other.conversationId != null)
-                return false;
-        } else if (!conversationId.equals(other.conversationId))
-            return false;
-        if (createdAt == null) {
-            if (other.createdAt != null)
-                return false;
-        } else if (!createdAt.equals(other.createdAt))
-            return false;
-        if (entities == null) {
-            if (other.entities != null)
-                return false;
-        } else if (!entities.equals(other.entities))
-            return false;
-        if (id == null) {
-            if (other.id != null)
-                return false;
-        } else if (!id.equals(other.id))
-            return false;
-        if (lang == null) {
-            if (other.lang != null)
-                return false;
-        } else if (!lang.equals(other.lang))
-            return false;
-        if (possiblySensitive == null) {
-            if (other.possiblySensitive != null)
-                return false;
-        } else if (!possiblySensitive.equals(other.possiblySensitive))
-            return false;
-        if (publicMetrics == null) {
-            if (other.publicMetrics != null)
-                return false;
-        } else if (!publicMetrics.equals(other.publicMetrics))
-            return false;
-        if (referencedTweets == null) {
-            if (other.referencedTweets != null)
-                return false;
-        } else if (!referencedTweets.equals(other.referencedTweets))
-            return false;
-        if (replySettings == null) {
-            if (other.replySettings != null)
-                return false;
-        } else if (!replySettings.equals(other.replySettings))
-            return false;
-        if (source == null) {
-            if (other.source != null)
-                return false;
-        } else if (!source.equals(other.source))
-            return false;
-        if (text == null) {
-            if (other.text != null)
-                return false;
-        } else if (!text.equals(other.text))
-            return false;
-        if (geo == null) {
-            if (other.geo != null)
-                return false;
-        } else if (!geo.equals(other.geo))
-            return false;
-        if (inReplyToUserId == null) {
-            if (other.inReplyToUserId != null)
-                return false;
-        } else if (!inReplyToUserId.equals(other.inReplyToUserId))
-            return false;
-
-        return true;
+        return Objects.equals(attachments, other.attachments) &&
+                Objects.equals(authorId, other.authorId) &&
+                Objects.equals(contextAnnotations, other.contextAnnotations) &&
+                Objects.equals(conversationId, other.conversationId) &&
+                Objects.equals(createdAt, other.createdAt) &&
+                Objects.equals(entities, other.entities) &&
+                Objects.equals(id, other.id) &&
+                Objects.equals(lang, other.lang) &&
+                Objects.equals(possiblySensitive, other.possiblySensitive) &&
+                Objects.equals(publicMetrics, other.publicMetrics) &&
+                Objects.equals(referencedTweets, other.referencedTweets) &&
+                Objects.equals(replySettings, other.replySettings) &&
+                Objects.equals(source, other.source) &&
+                Objects.equals(text, other.text) &&
+                Objects.equals(geo, other.geo) &&
+                Objects.equals(inReplyToUserId, other.inReplyToUserId);
     }
 
     @Override
     public String toString() {
-        return "TweetInfoData [createdAt=" + createdAt + ", id=" + id + ", text=" + text + ", authorId=" + authorId
-                + ", conversationId=" + conversationId + ", contextAnnotations=" + contextAnnotations + ", source="
-                + source + ", possiblySensitive=" + possiblySensitive + ", entities=" + entities + ", referencedTweets="
-                + referencedTweets + ", publicMetrics=" + publicMetrics + ", lang=" + lang + ", replySettings="
-                + replySettings + ", attachments=" + attachments + ", geo=" + geo + ", inReplyToUserId="
-                + inReplyToUserId + "]";
+        return String.format("TweetInfoData [createdAt=%s, id=%s, text=%s, authorId=%s, conversationId=%s, contextAnnotations=%s, source=%s, possiblySensitive=%s, entities=%s, referencedTweets=%s, publicMetrics=%s, lang=%s, replySettings=%s, attachments=%s, geo=%s, inReplyToUserId=%s]",
+                             createdAt, id, text, authorId, conversationId, contextAnnotations, source,
+                             possiblySensitive, entities, referencedTweets, publicMetrics, lang, replySettings,
+                             attachments, geo, inReplyToUserId);
     }
 
 }

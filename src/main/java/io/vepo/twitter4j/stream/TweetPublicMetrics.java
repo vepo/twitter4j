@@ -8,7 +8,7 @@ public class TweetPublicMetrics {
     @JsonProperty("reply_count")
     private int replyCount;
     @JsonProperty("like_count")
-    private int like_count;
+    private int likeCount;
     @JsonProperty("quote_count")
     private int quoteCount;
 
@@ -28,12 +28,12 @@ public class TweetPublicMetrics {
         this.replyCount = replyCount;
     }
 
-    public int getLike_count() {
-        return like_count;
+    public int getLikeCount() {
+        return likeCount;
     }
 
-    public void setLike_count(int like_count) {
-        this.like_count = like_count;
+    public void setLikeCount(int likeCount) {
+        this.likeCount = likeCount;
     }
 
     public int getQuoteCount() {
@@ -48,37 +48,35 @@ public class TweetPublicMetrics {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + like_count;
-        result = prime * result + quoteCount;
-        result = prime * result + replyCount;
-        result = prime * result + retweetCount;
+        result = prime * result + Integer.hashCode(likeCount);
+        result = prime * result + Integer.hashCode(quoteCount);
+        result = prime * result + Integer.hashCode(replyCount);
+        result = prime * result + Integer.hashCode(retweetCount);
         return result;
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj)
+        if (this == obj) {
             return true;
-        if (obj == null)
+        }
+        if (obj == null) {
             return false;
-        if (getClass() != obj.getClass())
+        }
+        if (getClass() != obj.getClass()) {
             return false;
+        }
         TweetPublicMetrics other = (TweetPublicMetrics) obj;
-        if (like_count != other.like_count)
-            return false;
-        if (quoteCount != other.quoteCount)
-            return false;
-        if (replyCount != other.replyCount)
-            return false;
-        if (retweetCount != other.retweetCount)
-            return false;
-        return true;
+        return likeCount == other.likeCount &&
+                quoteCount == other.quoteCount &&
+                replyCount == other.replyCount &&
+                retweetCount == other.retweetCount;
     }
 
     @Override
     public String toString() {
-        return "TweetPublicMetrics [retweetCount=" + retweetCount + ", replyCount=" + replyCount + ", like_count="
-                + like_count + ", quoteCount=" + quoteCount + "]";
+        return String.format("TweetPublicMetrics [retweetCount=%s, replyCount=%s, likeCount=%s, quoteCount=%s]",
+                             retweetCount, replyCount, likeCount, quoteCount);
     }
 
 }

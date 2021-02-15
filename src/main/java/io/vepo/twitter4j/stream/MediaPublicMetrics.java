@@ -18,26 +18,27 @@ public class MediaPublicMetrics {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + viewCount;
+        result = prime * result + Integer.hashCode(viewCount);
         return result;
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj)
+        if (this == obj) {
             return true;
-        if (obj == null)
+        }
+        if (obj == null) {
             return false;
-        if (getClass() != obj.getClass())
+        }
+        if (getClass() != obj.getClass()) {
             return false;
+        }
         MediaPublicMetrics other = (MediaPublicMetrics) obj;
-        if (viewCount != other.viewCount)
-            return false;
-        return true;
+        return viewCount == other.viewCount;
     }
 
     @Override
     public String toString() {
-        return "MediaPublicMetrics [viewCount=" + viewCount + "]";
+        return String.format("MediaPublicMetrics [viewCount=%s]", viewCount);
     }
 }

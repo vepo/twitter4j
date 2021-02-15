@@ -1,5 +1,7 @@
 package io.vepo.twitter4j.stream;
 
+import java.util.Objects;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class TweetInfoMediaData {
@@ -84,68 +86,43 @@ public class TweetInfoMediaData {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + height;
-        result = prime * result + ((mediaKey == null) ? 0 : mediaKey.hashCode());
-        result = prime * result + ((type == null) ? 0 : type.hashCode());
-        result = prime * result + ((url == null) ? 0 : url.hashCode());
-        result = prime * result + width;
-        result = prime * result + ((previewImageUrl == null) ? 0 : previewImageUrl.hashCode());
-        result = prime * result + ((durationMs == null) ? 0 : durationMs.hashCode());
-        result = prime * result + ((publicMetrics == null) ? 0 : publicMetrics.hashCode());
+        result = prime * result + Integer.hashCode(height);
+        result = prime * result + Integer.hashCode(width);
+        result = prime * result + Objects.hashCode(mediaKey);
+        result = prime * result + Objects.hashCode(type);
+        result = prime * result + Objects.hashCode(url);
+        result = prime * result + Objects.hashCode(previewImageUrl);
+        result = prime * result + Objects.hashCode(durationMs);
+        result = prime * result + Objects.hashCode(publicMetrics);
         return result;
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj)
+        if (this == obj) {
             return true;
-        if (obj == null)
+        }
+        if (obj == null) {
             return false;
-        if (getClass() != obj.getClass())
+        }
+        if (getClass() != obj.getClass()) {
             return false;
+        }
         TweetInfoMediaData other = (TweetInfoMediaData) obj;
-        if (height != other.height)
-            return false;
-        if (mediaKey == null) {
-            if (other.mediaKey != null)
-                return false;
-        } else if (!mediaKey.equals(other.mediaKey))
-            return false;
-        if (type == null) {
-            if (other.type != null)
-                return false;
-        } else if (!type.equals(other.type))
-            return false;
-        if (url == null) {
-            if (other.url != null)
-                return false;
-        } else if (!url.equals(other.url))
-            return false;
-        if (width != other.width)
-            return false;
-        if (previewImageUrl == null) {
-            if (other.previewImageUrl != null)
-                return false;
-        } else if (!previewImageUrl.equals(other.previewImageUrl))
-            return false;
-        if (durationMs == null) {
-            if (other.durationMs != null)
-                return false;
-        } else if (!durationMs.equals(other.durationMs))
-            return false;
-        if (publicMetrics == null) {
-            if (other.publicMetrics != null)
-                return false;
-        } else if (!publicMetrics.equals(other.publicMetrics))
-            return false;
-        return true;
+        return height == other.height &&
+                width == other.width &&
+                Objects.equals(mediaKey, other.mediaKey) &&
+                Objects.equals(type, other.type) &&
+                Objects.equals(url, other.url) &&
+                Objects.equals(previewImageUrl, other.previewImageUrl) &&
+                Objects.equals(durationMs, other.durationMs) &&
+                Objects.equals(publicMetrics, other.publicMetrics);
     }
 
     @Override
     public String toString() {
-        return "TweetInfoMediaData [mediaKey=" + mediaKey + ", type=" + type + ", height=" + height + ", width=" + width
-                + ", url=" + url + ", previewImageUrl=" + previewImageUrl + ", durationMs=" + durationMs
-                + ", publicMetrics=" + publicMetrics + "]";
+        return String.format("TweetInfoMediaData [mediaKey=%s, type=%s, height=%s, width=%s, url=%s, previewImageUrl=%s, durationMs=%s, publicMetrics=%s]",
+                             mediaKey, type, height, width, url, previewImageUrl, durationMs, publicMetrics);
     }
 
 }

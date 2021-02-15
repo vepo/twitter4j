@@ -1,6 +1,7 @@
 package io.vepo.twitter4j.stream;
 
 import java.util.List;
+import java.util.Objects;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -21,30 +22,28 @@ public class TweetAttachments {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((mediaKeys == null) ? 0 : mediaKeys.hashCode());
+        result = prime * result + Objects.hashCode(mediaKeys);
         return result;
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj)
+        if (this == obj) {
             return true;
-        if (obj == null)
+        }
+        if (obj == null) {
             return false;
-        if (getClass() != obj.getClass())
+        }
+        if (getClass() != obj.getClass()) {
             return false;
+        }
         TweetAttachments other = (TweetAttachments) obj;
-        if (mediaKeys == null) {
-            if (other.mediaKeys != null)
-                return false;
-        } else if (!mediaKeys.equals(other.mediaKeys))
-            return false;
-        return true;
+        return Objects.equals(mediaKeys, other.mediaKeys);
     }
 
     @Override
     public String toString() {
-        return "TweetAttachments [mediaKeys=" + mediaKeys + "]";
+        return String.format("TweetAttachments [mediaKeys=%s]", mediaKeys);
     }
 
 }

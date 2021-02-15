@@ -1,5 +1,7 @@
 package io.vepo.twitter4j.stream;
 
+import java.util.Objects;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class EntityAnnotation {
@@ -55,46 +57,37 @@ public class EntityAnnotation {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + end;
-        result = prime * result + ((normalizedText == null) ? 0 : normalizedText.hashCode());
-        result = prime * result + Float.floatToIntBits(probability);
-        result = prime * result + start;
-        result = prime * result + ((type == null) ? 0 : type.hashCode());
+        result = prime * result + Integer.hashCode(end);
+        result = prime * result + Objects.hashCode(normalizedText);
+        result = prime * result + Float.hashCode(probability);
+        result = prime * result + Integer.hashCode(start);
+        result = prime * result + Objects.hashCode(type);
         return result;
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj)
+        if (this == obj) {
             return true;
-        if (obj == null)
+        }
+        if (obj == null) {
             return false;
-        if (getClass() != obj.getClass())
+        }
+        if (getClass() != obj.getClass()) {
             return false;
+        }
         EntityAnnotation other = (EntityAnnotation) obj;
-        if (end != other.end)
-            return false;
-        if (normalizedText == null) {
-            if (other.normalizedText != null)
-                return false;
-        } else if (!normalizedText.equals(other.normalizedText))
-            return false;
-        if (Float.floatToIntBits(probability) != Float.floatToIntBits(other.probability))
-            return false;
-        if (start != other.start)
-            return false;
-        if (type == null) {
-            if (other.type != null)
-                return false;
-        } else if (!type.equals(other.type))
-            return false;
-        return true;
+        return end == other.end &&
+                start == other.start &&
+                Float.compare(probability, other.probability) == 0 &&
+                Objects.equals(normalizedText, other.normalizedText) &&
+                Objects.equals(type, other.type);
     }
 
     @Override
     public String toString() {
-        return "Annotation [start=" + start + ", end=" + end + ", probability=" + probability + ", type=" + type
-                + ", normalizedText=" + normalizedText + "]";
+        return String.format("EntityAnnotation [start=%s, end=%s, probability=%s, type=%s, normalizedText=%s]", start,
+                             end, probability, type, normalizedText);
     }
 
 }

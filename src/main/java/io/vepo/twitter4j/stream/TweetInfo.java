@@ -1,6 +1,7 @@
 package io.vepo.twitter4j.stream;
 
 import java.util.List;
+import java.util.Objects;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -38,42 +39,32 @@ public class TweetInfo {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((data == null) ? 0 : data.hashCode());
-        result = prime * result + ((includes == null) ? 0 : includes.hashCode());
-        result = prime * result + ((matchingRules == null) ? 0 : matchingRules.hashCode());
+        result = prime * result + Objects.hashCode(data);
+        result = prime * result + Objects.hashCode(includes);
+        result = prime * result + Objects.hashCode(matchingRules);
         return result;
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj)
+        if (this == obj) {
             return true;
-        if (obj == null)
+        }
+        if (obj == null) {
             return false;
-        if (getClass() != obj.getClass())
+        }
+        if (getClass() != obj.getClass()) {
             return false;
+        }
         TweetInfo other = (TweetInfo) obj;
-        if (data == null) {
-            if (other.data != null)
-                return false;
-        } else if (!data.equals(other.data))
-            return false;
-        if (includes == null) {
-            if (other.includes != null)
-                return false;
-        } else if (!includes.equals(other.includes))
-            return false;
-        if (matchingRules == null) {
-            if (other.matchingRules != null)
-                return false;
-        } else if (!matchingRules.equals(other.matchingRules))
-            return false;
-        return true;
+        return Objects.equals(data, other.data) &&
+                Objects.equals(includes, other.includes) &&
+                Objects.equals(matchingRules, other.matchingRules);
     }
 
     @Override
     public String toString() {
-        return "TweetInfo [data=" + data + ", includes=" + includes + ", matchingRules=" + matchingRules + "]";
+        return String.format("TweetInfo [data=%s, includes=%s, matchingRules=%s]", data, includes, matchingRules);
     }
 
 }

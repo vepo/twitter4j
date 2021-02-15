@@ -1,6 +1,7 @@
 package io.vepo.twitter4j.stream;
 
 import java.util.List;
+import java.util.Objects;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -103,80 +104,51 @@ public class TweetUrl {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((description == null) ? 0 : description.hashCode());
-        result = prime * result + ((displayUrl == null) ? 0 : displayUrl.hashCode());
-        result = prime * result + end;
-        result = prime * result + ((expandedUrl == null) ? 0 : expandedUrl.hashCode());
-        result = prime * result + ((images == null) ? 0 : images.hashCode());
-        result = prime * result + start;
-        result = prime * result + ((status == null) ? 0 : status.hashCode());
-        result = prime * result + ((title == null) ? 0 : title.hashCode());
-        result = prime * result + ((unwoundUrl == null) ? 0 : unwoundUrl.hashCode());
-        result = prime * result + ((url == null) ? 0 : url.hashCode());
+        result = prime * result + Integer.hashCode(start);
+        result = prime * result + Integer.hashCode(end);
+        result = prime * result + Objects.hashCode(description);
+        result = prime * result + Objects.hashCode(displayUrl);
+        result = prime * result + Objects.hashCode(expandedUrl);
+        result = prime * result + Objects.hashCode(images);
+        result = prime * result + Objects.hashCode(status);
+        result = prime * result + Objects.hashCode(title);
+        result = prime * result + Objects.hashCode(unwoundUrl);
+        result = prime * result + Objects.hashCode(url);
         return result;
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj)
+        if (this == obj) {
             return true;
-        if (obj == null)
+        }
+
+        if (obj == null) {
             return false;
-        if (getClass() != obj.getClass())
+        }
+
+        if (getClass() != obj.getClass()) {
             return false;
+        }
+
         TweetUrl other = (TweetUrl) obj;
-        if (description == null) {
-            if (other.description != null)
-                return false;
-        } else if (!description.equals(other.description))
-            return false;
-        if (displayUrl == null) {
-            if (other.displayUrl != null)
-                return false;
-        } else if (!displayUrl.equals(other.displayUrl))
-            return false;
-        if (end != other.end)
-            return false;
-        if (expandedUrl == null) {
-            if (other.expandedUrl != null)
-                return false;
-        } else if (!expandedUrl.equals(other.expandedUrl))
-            return false;
-        if (images == null) {
-            if (other.images != null)
-                return false;
-        } else if (!images.equals(other.images))
-            return false;
-        if (start != other.start)
-            return false;
-        if (status == null) {
-            if (other.status != null)
-                return false;
-        } else if (!status.equals(other.status))
-            return false;
-        if (title == null) {
-            if (other.title != null)
-                return false;
-        } else if (!title.equals(other.title))
-            return false;
-        if (unwoundUrl == null) {
-            if (other.unwoundUrl != null)
-                return false;
-        } else if (!unwoundUrl.equals(other.unwoundUrl))
-            return false;
-        if (url == null) {
-            if (other.url != null)
-                return false;
-        } else if (!url.equals(other.url))
-            return false;
-        return true;
+        return start == other.start &&
+                end == other.end &&
+                Objects.equals(description, other.description) &&
+                Objects.equals(displayUrl, other.displayUrl) &&
+                Objects.equals(expandedUrl, other.expandedUrl) &&
+                Objects.equals(images, other.images) &&
+                Objects.equals(status, other.status) &&
+                Objects.equals(title, other.title) &&
+                Objects.equals(unwoundUrl, other.unwoundUrl) &&
+                Objects.equals(url, other.url);
     }
 
     @Override
     public String toString() {
-        return "TweetUrl [start=" + start + ", end=" + end + ", url=" + url + ", expandedUrl=" + expandedUrl
-                + ", displayUrl=" + displayUrl + ", images=" + images + ", status=" + status + ", title=" + title
-                + ", description=" + description + ", unwoundUrl=" + unwoundUrl + "]";
+        return String.format("TweetUrl [start=%s, end=%s, url=%s, expandedUrl=%s, displayUrl=%s, images=%s, status=%s, title=%s, description=%s, unwoundUrl=%s]",
+                             start, end, url, expandedUrl, displayUrl, images, status, title, description, unwoundUrl);
     }
 
+   
 }

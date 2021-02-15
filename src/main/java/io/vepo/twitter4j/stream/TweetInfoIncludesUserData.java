@@ -1,6 +1,7 @@
 package io.vepo.twitter4j.stream;
 
 import java.util.Date;
+import java.util.Objects;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -134,105 +135,55 @@ public class TweetInfoIncludesUserData {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((createdAt == null) ? 0 : createdAt.hashCode());
-        result = prime * result + ((description == null) ? 0 : description.hashCode());
-        result = prime * result + ((entities == null) ? 0 : entities.hashCode());
-        result = prime * result + ((id == null) ? 0 : id.hashCode());
-        result = prime * result + ((location == null) ? 0 : location.hashCode());
-        result = prime * result + ((name == null) ? 0 : name.hashCode());
-        result = prime * result + ((pinnedTweetId == null) ? 0 : pinnedTweetId.hashCode());
-        result = prime * result + ((profileImageUrl == null) ? 0 : profileImageUrl.hashCode());
-        result = prime * result + ((publicMetrics == null) ? 0 : publicMetrics.hashCode());
-        result = prime * result + ((url == null) ? 0 : url.hashCode());
-        result = prime * result + ((userProtected == null) ? 0 : userProtected.hashCode());
-        result = prime * result + ((username == null) ? 0 : username.hashCode());
-        result = prime * result + ((verified == null) ? 0 : verified.hashCode());
+        result = prime * result + Objects.hashCode(createdAt);
+        result = prime * result + Objects.hashCode(description);
+        result = prime * result + Objects.hashCode(entities);
+        result = prime * result + Objects.hashCode(id);
+        result = prime * result + Objects.hashCode(location);
+        result = prime * result + Objects.hashCode(name);
+        result = prime * result + Objects.hashCode(pinnedTweetId);
+        result = prime * result + Objects.hashCode(profileImageUrl);
+        result = prime * result + Objects.hashCode(publicMetrics);
+        result = prime * result + Objects.hashCode(url);
+        result = prime * result + Objects.hashCode(userProtected);
+        result = prime * result + Objects.hashCode(username);
+        result = prime * result + Objects.hashCode(verified);
         return result;
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj)
+        if (this == obj) {
             return true;
-        if (obj == null)
+        }
+        if (obj == null) {
             return false;
-        if (getClass() != obj.getClass())
+        }
+        if (getClass() != obj.getClass()) {
             return false;
+        }
         TweetInfoIncludesUserData other = (TweetInfoIncludesUserData) obj;
-        if (createdAt == null) {
-            if (other.createdAt != null)
-                return false;
-        } else if (!createdAt.equals(other.createdAt))
-            return false;
-        if (description == null) {
-            if (other.description != null)
-                return false;
-        } else if (!description.equals(other.description))
-            return false;
-        if (entities == null) {
-            if (other.entities != null)
-                return false;
-        } else if (!entities.equals(other.entities))
-            return false;
-        if (id == null) {
-            if (other.id != null)
-                return false;
-        } else if (!id.equals(other.id))
-            return false;
-        if (location == null) {
-            if (other.location != null)
-                return false;
-        } else if (!location.equals(other.location))
-            return false;
-        if (name == null) {
-            if (other.name != null)
-                return false;
-        } else if (!name.equals(other.name))
-            return false;
-        if (pinnedTweetId == null) {
-            if (other.pinnedTweetId != null)
-                return false;
-        } else if (!pinnedTweetId.equals(other.pinnedTweetId))
-            return false;
-        if (profileImageUrl == null) {
-            if (other.profileImageUrl != null)
-                return false;
-        } else if (!profileImageUrl.equals(other.profileImageUrl))
-            return false;
-        if (publicMetrics == null) {
-            if (other.publicMetrics != null)
-                return false;
-        } else if (!publicMetrics.equals(other.publicMetrics))
-            return false;
-        if (url == null) {
-            if (other.url != null)
-                return false;
-        } else if (!url.equals(other.url))
-            return false;
-        if (userProtected == null) {
-            if (other.userProtected != null)
-                return false;
-        } else if (!userProtected.equals(other.userProtected))
-            return false;
-        if (username == null) {
-            if (other.username != null)
-                return false;
-        } else if (!username.equals(other.username))
-            return false;
-        if (verified == null) {
-            if (other.verified != null)
-                return false;
-        } else if (!verified.equals(other.verified))
-            return false;
-        return true;
+        return Objects.equals(createdAt, other.createdAt) &&
+                Objects.equals(description, other.description) &&
+                Objects.equals(entities, other.entities) &&
+                Objects.equals(id, other.id) &&
+                Objects.equals(location, other.location) &&
+                Objects.equals(name, other.name) &&
+                Objects.equals(pinnedTweetId, other.pinnedTweetId) &&
+                Objects.equals(profileImageUrl, other.profileImageUrl) &&
+                Objects.equals(publicMetrics, other.publicMetrics) &&
+                Objects.equals(url, other.url) &&
+                Objects.equals(userProtected, other.userProtected) &&
+                Objects.equals(username, other.username) &&
+                Objects.equals(verified, other.verified);
+
     }
 
     @Override
     public String toString() {
-        return "TweetInfoIncludesUserData [id=" + id + ", createdAt=" + createdAt + ", username=" + username + ", name="
-                + name + ", profileImageUrl=" + profileImageUrl + ", description=" + description + ", verified="
-                + verified + ", publicMetrics=" + publicMetrics + ", userProtected=" + userProtected + ", url=" + url
-                + ", location=" + location + ", pinnedTweetId=" + pinnedTweetId + ", entities=" + entities + "]";
+        return String.format("TweetInfoIncludesUserData [id=%s, createdAt=%s, username=%s, name=%s, profileImageUrl=%s, description=%s, verified=%s, publicMetrics=%s, userProtected=%s, url=%s, location=%s, pinnedTweetId=%s, entities=%s]",
+                             id, createdAt, username, name, profileImageUrl, description, verified, publicMetrics,
+                             userProtected, url, location, pinnedTweetId, entities);
     }
 
 }
