@@ -9,7 +9,7 @@ public class UserPublicMetrics {
     private int followersCount;
     @JsonProperty("following_count")
     private int followingCount;
-    @JsonProperty("tweetCount")
+    @JsonProperty("tweet_count")
     private int tweetCount;
     @JsonProperty("listed_count")
     private int listedCount;
