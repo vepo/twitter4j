@@ -1,5 +1,7 @@
 package io.vepo.twitter4j.stream;
 
+import java.util.Objects;
+
 public class ContextAnnotation {
 
     private ContextAnnotationDomain domain;
@@ -25,8 +27,8 @@ public class ContextAnnotation {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((domain == null) ? 0 : domain.hashCode());
-        result = prime * result + ((entity == null) ? 0 : entity.hashCode());
+        result = prime * result + Objects.hashCode(domain);
+        result = prime * result + Objects.hashCode(entity);
         return result;
     }
 

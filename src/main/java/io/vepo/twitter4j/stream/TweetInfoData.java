@@ -2,6 +2,7 @@ package io.vepo.twitter4j.stream;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -166,22 +167,22 @@ public class TweetInfoData {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((attachments == null) ? 0 : attachments.hashCode());
-        result = prime * result + ((authorId == null) ? 0 : authorId.hashCode());
-        result = prime * result + ((contextAnnotations == null) ? 0 : contextAnnotations.hashCode());
-        result = prime * result + ((conversationId == null) ? 0 : conversationId.hashCode());
-        result = prime * result + ((createdAt == null) ? 0 : createdAt.hashCode());
-        result = prime * result + ((entities == null) ? 0 : entities.hashCode());
-        result = prime * result + ((id == null) ? 0 : id.hashCode());
-        result = prime * result + ((lang == null) ? 0 : lang.hashCode());
-        result = prime * result + ((possiblySensitive == null) ? 0 : possiblySensitive.hashCode());
-        result = prime * result + ((publicMetrics == null) ? 0 : publicMetrics.hashCode());
-        result = prime * result + ((referencedTweets == null) ? 0 : referencedTweets.hashCode());
-        result = prime * result + ((replySettings == null) ? 0 : replySettings.hashCode());
-        result = prime * result + ((source == null) ? 0 : source.hashCode());
-        result = prime * result + ((text == null) ? 0 : text.hashCode());
-        result = prime * result + ((geo == null) ? 0 : geo.hashCode());
-        result = prime * result + ((inReplyToUserId == null) ? 0 : inReplyToUserId.hashCode());
+        result = prime * result + Objects.hashCode(attachments);
+        result = prime * result + Objects.hashCode(authorId);
+        result = prime * result + Objects.hashCode(contextAnnotations);
+        result = prime * result + Objects.hashCode(conversationId);
+        result = prime * result + Objects.hashCode(createdAt);
+        result = prime * result + Objects.hashCode(entities);
+        result = prime * result + Objects.hashCode(id);
+        result = prime * result + Objects.hashCode(lang);
+        result = prime * result + Objects.hashCode(possiblySensitive);
+        result = prime * result + Objects.hashCode(publicMetrics);
+        result = prime * result + Objects.hashCode(referencedTweets);
+        result = prime * result + Objects.hashCode(replySettings);
+        result = prime * result + Objects.hashCode(source);
+        result = prime * result + Objects.hashCode(text);
+        result = prime * result + Objects.hashCode(geo);
+        result = prime * result + Objects.hashCode(inReplyToUserId);
         return result;
     }
 
