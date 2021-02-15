@@ -18,6 +18,8 @@ import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.Consumer;
 
 import org.slf4j.Logger;
@@ -40,9 +42,11 @@ public class TwitterClient {
     public class TwitterStreamClient {
 
         private List<Rule> rules;
+        private ExecutorService executor;
 
         private TwitterStreamClient() {
             this.rules = new ArrayList<>();
+            executors.add(this.executor = Executors.newSingleThreadExecutor());
         }
 
         public TwitterStreamClient with(Rule rule) {
@@ -130,7 +134,8 @@ public class TwitterClient {
                             if (nonNull(line) && !line.isBlank()) {
                                 tweetConsumer.accept(objectMapper.readValue(line, Tweet.class));
                             }
-                        } while (nonNull(line));
+
+                        } while (nonNull(line) && !executor.isShutdown());
 
                     }
                 }
@@ -193,14 +198,14 @@ public class TwitterClient {
     private ObjectMapper objectMapper;
     private TwitterOAuth2Token oauth2Token;
     private HttpClient httpClient;
-    private ExecutorService executor;
+    private List<ExecutorService> executors;
 
     public TwitterClient(String apiKey, String apiKeySecret) {
         this.apiKey = apiKey;
         this.apiKeySecret = apiKeySecret;
         this.objectMapper = new ObjectMapper();
         this.httpClient = HttpClient.newHttpClient();
-        this.executor = Executors.newSingleThreadExecutor();
+        this.executors = new ArrayList<>();
     }
 
     public TwitterClient authenticate() {
@@ -257,6 +262,36 @@ public class TwitterClient {
         }
 
         return header;
+    }
+
+    public void join() {
+        AtomicBoolean running = new AtomicBoolean(true);
+        Runtime.getRuntime().addShutdownHook(new Thread() {
+            public void run() {
+                logger.info("Shutdown signal received...");
+                executors.forEach(ExecutorService::shutdown);
+                logger.info("Clients shutdown required...");
+                executors.forEach(executor -> {
+                    try {
+                        executor.awaitTermination(5, TimeUnit.SECONDS);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
+                });
+                running.set(false);
+                logger.info("Shutdown hookup finished!");
+            }
+        });
+        while (executors.stream().allMatch(exec -> {
+            try {
+                return !exec.awaitTermination(10, TimeUnit.SECONDS) && !exec.isShutdown();
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                return true;
+            }
+        }))
+            ;
+        logger.info("Clients finished!");
     }
 
 }

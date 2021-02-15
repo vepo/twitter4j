@@ -19,5 +19,6 @@ tClient.authenticate()
                                      .isRetweet()
                                      .build())
                     .applyTag("Tweets about Trump"))
-        .consume(System.out::println);
+        .consume(System.out::println)
+        .join();
 ```
