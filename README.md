@@ -2,6 +2,7 @@
 
 WIP - Work in Progress
 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=vepo_twitter4j&metric=alert_status)](https://sonarcloud.io/dashboard?id=vepo_twitter4j) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=vepo_twitter4j&metric=coverage)](https://sonarcloud.io/dashboard?id=vepo_twitter4j)
 
 Example: 
 
@@ -12,9 +13,11 @@ tClient.authenticate()
         .stream()
         .with(Rule.builder()
                     .withToken("Trump")
-                    .without()
-                    .withImages()
-                    .endGroup()
+                    .without(Matching.builder()
+                                     .withImages()
+                                     .or()
+                                     .isRetweet()
+                                     .build())
                     .applyTag("Tweets about Trump"))
         .consume(System.out::println);
 ```

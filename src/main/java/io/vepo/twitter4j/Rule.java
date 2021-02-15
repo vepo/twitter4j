@@ -1,10 +1,144 @@
 package io.vepo.twitter4j;
 
-import static java.util.Objects.nonNull;
-
 public class Rule {
+    @SuppressWarnings("unchecked")
+    private static abstract class AbstractMatchingRuleBuilder<T extends AbstractMatchingRuleBuilder<?>> {
+        protected StringBuilder value;
+
+        private AbstractMatchingRuleBuilder(Class<T> thisClass) {
+            value = new StringBuilder();
+        }
+
+        public T isRetweet() {
+            this.value.append(" is:retweet");
+            return (T) this;
+        }
+
+        public T or() {
+            this.value.append(" OR");
+            return (T) this;
+        }
+
+        public T with(Matching matching) {
+            this.value.append(" (");
+            this.value.append(matching.value);
+            this.value.append(")");
+            return (T) this;
+        }
+
+        public T withImages() {
+            this.value.append(" has:images");
+            return (T) this;
+        }
+
+        public T withLanguage(Language language) {
+            this.value.append(" lang:").append(language.lang);
+            return (T) this;
+        }
+
+        public T withLinks() {
+            this.value.append(" has:links");
+            return (T) this;
+        }
+
+        public T withMedia() {
+            this.value.append(" has:media");
+            return (T) this;
+        }
+
+        public T withMentions() {
+            this.value.append(" has:mentions");
+            return (T) this;
+        }
+
+        public T without(Matching matching) {
+            this.value.append(" -(");
+            this.value.append(matching.value);
+            this.value.append(")");
+            return (T) this;
+        }
+
+        public T withToken(String token) {
+            if (token.trim().contains(" ")) {
+                this.value.append(" \"").append(token).append('"');
+            } else {
+                this.value.append(" ").append(token);
+            }
+            return (T) this;
+        }
+    }
+
     public enum Language {
-        Portuguese("pt"), English("en");
+        Amharic("am"),
+        Arabic("ar"),
+        Armenian("hy"),
+        Basque("eu"),
+        Bengali("bn"),
+        Bosnian("bs"),
+        Bulgarian("bg"),
+        Burmese("my"),
+        Catalan("ca"),
+        Croatian("hr"),
+        Czech("cs"),
+        Danish("da"),
+        Dutch("nl"),
+        English("en"),
+        Estonian("et"),
+        Finnish("fi"),
+        French("fr"),
+        Georgian("ka"),
+        German("de"),
+        Greek("el"),
+        Gujarati("gu"),
+        Haitian_Creole("ht"),
+        Hebrew("iw"),
+        Hindi("hi"),
+        Hungarian("hu"),
+        Icelandic("is"),
+        Indonesian("in"),
+        Italian("it"),
+        Japanese("ja"),
+        Kannada("kn"),
+        Khmer("km"),
+        Korean("ko"),
+        Lao("lo"),
+        Latinized_Hindi("hi-Latn"),
+        Latvian("lv"),
+        Lithuanian("lt"),
+        Malayalam("ml"),
+        Maldivian("dv"),
+        Marathi("mr"),
+        Nepali("ne"),
+        Norwegian("no"),
+        Oriya("or"),
+        Panjabi("pa"),
+        Pashto("ps"),
+        Persian("fa"),
+        Polish("pl"),
+        Portuguese("pt"),
+        Romanian("ro"),
+        Russian("ru"),
+        Serbian("sr"),
+        Simplified_Chinese("zh-CN"),
+        Sindhi("sd"),
+        Sinhala("si"),
+        Slovak("sk"),
+        Slovenian("sl"),
+        Sorani_Kurdish("ckb"),
+        Spanish("es"),
+        Swedish("sv"),
+        Tagalog("tl"),
+        Tamil("ta"),
+        Telugu("te"),
+        Thai("th"),
+        Tibetan("bo"),
+        Traditional_Chinese("zh-TW"),
+        Turkish("tr"),
+        Ukrainian("uk"),
+        Urdu("ur"),
+        Uyghur("ug"),
+        Vietnamese("vi"),
+        Welsh("cy");
 
         private String lang;
 
@@ -14,232 +148,41 @@ public class Rule {
 
     }
 
-    public static class RootGroupRuleBuilder extends SubGroupRuleBuilder {
-
-        private RootGroupRuleBuilder(RuleBuilder parent) {
-            super(parent);
+    public static class Matching {
+        public static MatchingRuleBuilder builder() {
+            return new MatchingRuleBuilder();
         }
 
-        @Override
-        public RuleBuilder endGroup() {
-            return (RuleBuilder) super.endGroup();
+        private String value;
+
+        public Matching(String value) {
+            this.value = value;
         }
 
-        @Override
-        public RootGroupRuleBuilder isRetweet() {
-            return (RootGroupRuleBuilder) super.isRetweet();
+    }
+
+    public static class MatchingRuleBuilder extends AbstractMatchingRuleBuilder<MatchingRuleBuilder> {
+
+        private MatchingRuleBuilder() {
+            super(MatchingRuleBuilder.class);
         }
 
-        @Override
-        public SubGroupRuleBuilder with() {
-            return super.with();
-        }
-
-        @Override
-        public RootGroupRuleBuilder withImages() {
-            return (RootGroupRuleBuilder) super.withImages();
-        }
-
-        @Override
-        public RootGroupRuleBuilder withLinks() {
-            return (RootGroupRuleBuilder) super.withLinks();
-        }
-
-        @Override
-        public RootGroupRuleBuilder withMedia() {
-            return (RootGroupRuleBuilder) super.withMedia();
-        }
-
-        @Override
-        public RootGroupRuleBuilder withMentions() {
-            return (RootGroupRuleBuilder) super.withMentions();
-        }
-
-        @Override
-        public SubGroupRuleBuilder without() {
-            return super.without();
-        }
-
-        @Override
-        public RootGroupRuleBuilder withToken(String token) {
-            return (RootGroupRuleBuilder) super.withToken(token);
+        public Matching build() {
+            return new Matching(this.value.toString()
+                                          .trim());
         }
     }
 
-    public static class RuleBuilder extends SubRuleBuilder {
-        private Language language;
+    public static class RuleBuilder extends AbstractMatchingRuleBuilder<RuleBuilder> {
 
         private RuleBuilder() {
-            super();
-            this.language = null;
+            super(RuleBuilder.class);
         }
 
         public Rule applyTag(String tag) {
-            if (nonNull(language)) {
-                this.value.append(" lang:").append(this.language.lang);
-            }
             return new Rule(value.toString().trim(), tag);
         }
 
-        @Override
-        public RuleBuilder isRetweet() {
-            return (RuleBuilder) super.isRetweet();
-        }
-
-        @Override
-        public RuleBuilder or() {
-            return (RuleBuilder) super.or();
-        }
-
-        @Override
-        public RootGroupRuleBuilder with() {
-            this.value.append(" (");
-            return new RootGroupRuleBuilder(this);
-        }
-
-        @Override
-        public RuleBuilder withImages() {
-            return (RuleBuilder) super.withImages();
-        }
-
-        public RuleBuilder withLanguage(Language language) {
-            this.language = language;
-            return this;
-        }
-
-        @Override
-        public RuleBuilder withLinks() {
-            return (RuleBuilder) super.withLinks();
-        }
-
-        @Override
-        public RuleBuilder withMedia() {
-            return (RuleBuilder) super.withMedia();
-        }
-
-        @Override
-        public RuleBuilder withMentions() {
-            return (RuleBuilder) super.withMentions();
-        }
-
-        @Override
-        public RootGroupRuleBuilder without() {
-            this.value.append(" -(");
-            return new RootGroupRuleBuilder(this);
-        }
-
-        @Override
-        public RuleBuilder withToken(String token) {
-            return (RuleBuilder) super.withToken(token);
-        }
-
-    }
-
-    public static class SubGroupRuleBuilder extends SubRuleBuilder {
-        private SubRuleBuilder parent;
-
-        private SubGroupRuleBuilder(SubRuleBuilder parent) {
-            super();
-            this.parent = parent;
-        }
-
-        public SubRuleBuilder endGroup() {
-            this.parent.value.append(this.value);
-            this.parent.value.append(")");
-            return parent;
-        }
-
-        @Override
-        public SubGroupRuleBuilder isRetweet() {
-            return (SubGroupRuleBuilder) super.isRetweet();
-        }
-
-        @Override
-        public SubGroupRuleBuilder withImages() {
-            return (SubGroupRuleBuilder) super.withImages();
-        }
-
-        @Override
-        public SubGroupRuleBuilder withLinks() {
-            return (SubGroupRuleBuilder) super.withLinks();
-        }
-
-        @Override
-        public SubGroupRuleBuilder withMedia() {
-            return (SubGroupRuleBuilder) super.withMedia();
-        }
-
-        @Override
-        public SubGroupRuleBuilder withMentions() {
-            return (SubGroupRuleBuilder) super.withMentions();
-        }
-
-        @Override
-        public SubGroupRuleBuilder without() {
-            return super.without();
-        }
-
-        @Override
-        public SubRuleBuilder withToken(String token) {
-            return super.withToken(token);
-        }
-    }
-
-    public static class SubRuleBuilder {
-        protected StringBuilder value;
-
-        private SubRuleBuilder() {
-            value = new StringBuilder();
-        }
-
-        public SubRuleBuilder isRetweet() {
-            this.value.append(" is:retweet");
-            return this;
-        }
-
-        public SubRuleBuilder or() {
-            this.value.append(" OR ");
-            return this;
-        }
-
-        public SubGroupRuleBuilder with() {
-            this.value.append(" (");
-            return new SubGroupRuleBuilder(this);
-        }
-
-        public SubRuleBuilder withImages() {
-            this.value.append(" has:images");
-            return this;
-        }
-
-        public SubRuleBuilder withLinks() {
-            this.value.append(" has:links");
-            return this;
-        }
-
-        public SubRuleBuilder withMedia() {
-            this.value.append(" has:media");
-            return this;
-        }
-
-        public SubRuleBuilder withMentions() {
-            this.value.append(" has:mentions");
-            return this;
-        }
-
-        public SubGroupRuleBuilder without() {
-            this.value.append(" -(");
-            return new SubGroupRuleBuilder(this);
-        }
-
-        public SubRuleBuilder withToken(String token) {
-            if (token.trim().contains(" ")) {
-                this.value.append(" \"").append(token).append('"');
-            } else {
-                this.value.append(" ").append(token);
-            }
-            return this;
-        }
     }
 
     public static RuleBuilder builder() {
