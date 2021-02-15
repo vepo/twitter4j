@@ -1,0 +1,199 @@
+{
+    "data": {
+        "source": "Twitter for Android",
+        "public_metrics": {
+            "retweet_count": 56,
+            "reply_count": 0,
+            "like_count": 0,
+            "quote_count": 0
+        },
+        "lang": "pt",
+        "author_id": "73132381",
+        "created_at": "2021-02-15T14:26:38.000Z",
+        "text": "RT @ManuelaDavila: Aqui q explicao mais transparente sobre as razes pelos quais Bolsonaro editou o decreto das armas. https://t.co/XG15w",
+        "entities": {
+            "mentions": [
+                {
+                    "start": 3,
+                    "end": 17,
+                    "username": "ManuelaDavila"
+                }
+            ],
+            "annotations": [
+                {
+                    "start": 83,
+                    "end": 91,
+                    "probability": 0.9996,
+                    "type": "Person",
+                    "normalized_text": "Bolsonaro"
+                }
+            ]
+        },
+        "conversation_id": "1361321020414709768",
+        "referenced_tweets": [
+            {
+                "type": "retweeted",
+                "id": "1361319509362159616"
+            }
+        ],
+        "id": "1361321020414709768",
+        "possibly_sensitive": false,
+        "reply_settings": "everyone",
+        "context_annotations": [
+            {
+                "domain": {
+                    "id": "10",
+                    "name": "Person",
+                    "description": "Named people in the world like Nelson Mandela"
+                },
+                "entity": {
+                    "id": "953727884060893184",
+                    "name": "Manuela D'vila",
+                    "description": "Manuela D'vila"
+                }
+            },
+            {
+                "domain": {
+                    "id": "35",
+                    "name": "Politician",
+                    "description": "Politicians in the world, like Joe Biden"
+                },
+                "entity": {
+                    "id": "953727884060893184",
+                    "name": "Manuela D'vila",
+                    "description": "Manuela D'vila"
+                }
+            }
+        ]
+    },
+    "includes": {
+        "users": [
+            {
+                "profile_image_url": "https://pbs.twimg.com/profile_images/1329522172835078149/SSRk77D-_normal.jpg",
+                "location": "Santos, Brasil",
+                "description": "?????",
+                "id": "73132381",
+                "created_at": "2009-09-10T14:47:26.000Z",
+                "verified": false,
+                "name": "Laerte Farinello",
+                "public_metrics": {
+                    "followers_count": 197,
+                    "following_count": 153,
+                    "tweet_count": 2314,
+                    "listed_count": 0
+                },
+                "protected": false,
+                "username": "Lalo1959",
+                "url": ""
+            },
+            {
+                "profile_image_url": "https://pbs.twimg.com/profile_images/1361110377539530756/Q89m5UQ6_normal.jpg",
+                "location": "Porto Alegre, Brasil",
+                "description": "Me da Laura ?? Madrasta do Gui ?? escritora, jornalista e mestra em Polticas Pblicas.",
+                "entities": {
+                    "url": {
+                        "urls": [
+                            {
+                                "start": 0,
+                                "end": 23,
+                                "url": "https://t.co/2YYfk8LW0i",
+                                "expanded_url": "https://manuela.poa.br/",
+                                "display_url": "manuela.poa.br"
+                            }
+                        ]
+                    }
+                },
+                "id": "25858078",
+                "created_at": "2009-03-22T18:46:14.000Z",
+                "verified": true,
+                "name": "Manuela",
+                "public_metrics": {
+                    "followers_count": 1166053,
+                    "following_count": 792,
+                    "tweet_count": 59991,
+                    "listed_count": 2621
+                },
+                "protected": false,
+                "username": "ManuelaDavila",
+                "url": "https://t.co/2YYfk8LW0i",
+                "pinned_tweet_id": "1305612163646709761"
+            }
+        ],
+        "tweets": [
+            {
+                "source": "Twitter for iPhone",
+                "public_metrics": {
+                    "retweet_count": 56,
+                    "reply_count": 5,
+                    "like_count": 365,
+                    "quote_count": 5
+                },
+                "lang": "pt",
+                "author_id": "25858078",
+                "created_at": "2021-02-15T14:20:37.000Z",
+                "text": "Aqui q explicao mais transparente sobre as razes pelos quais Bolsonaro editou o decreto das armas. https://t.co/XG15wBMzT6",
+                "conversation_id": "1361319509362159616",
+                "entities": {
+                    "urls": [
+                        {
+                            "start": 102,
+                            "end": 125,
+                            "url": "https://t.co/XG15wBMzT6",
+                            "expanded_url": "https://twitter.com/ManuelaDavila/status/1361319509362159616/photo/1",
+                            "display_url": "pic.twitter.com/XG15wBMzT6"
+                        }
+                    ],
+                    "annotations": [
+                        {
+                            "start": 64,
+                            "end": 72,
+                            "probability": 0.9997,
+                            "type": "Person",
+                            "normalized_text": "Bolsonaro"
+                        }
+                    ]
+                },
+                "id": "1361319509362159616",
+                "possibly_sensitive": false,
+                "reply_settings": "everyone",
+                "context_annotations": [
+                    {
+                        "domain": {
+                            "id": "10",
+                            "name": "Person",
+                            "description": "Named people in the world like Nelson Mandela"
+                        },
+                        "entity": {
+                            "id": "953727884060893184",
+                            "name": "Manuela D'vila",
+                            "description": "Manuela D'vila"
+                        }
+                    },
+                    {
+                        "domain": {
+                            "id": "35",
+                            "name": "Politician",
+                            "description": "Politicians in the world, like Joe Biden"
+                        },
+                        "entity": {
+                            "id": "953727884060893184",
+                            "name": "Manuela D'vila",
+                            "description": "Manuela D'vila"
+                        }
+                    }
+                ],
+                "attachments": {
+                    "media_keys": [
+                        "3_1361319504337321987"
+                    ]
+                }
+            }
+        ]
+    },
+    "matching_rules": [
+        {
+            "id": 1361321053595840516,
+            "tag": "Bolsonaro"
+        }
+    ]
+}

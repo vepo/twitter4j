@@ -4,25 +4,25 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Tweet {
-    private TweetData data;
-    private TweetIncludeData includes;
+public class TweetInfo {
+    private TweetInfoData data;
+    private TweetInfoIncludes includes;
     @JsonProperty("matching_rules")
     private List<TweetMatchingRule> matchingRules;
 
-    public TweetData getData() {
+    public TweetInfoData getData() {
         return data;
     }
 
-    public void setData(TweetData data) {
+    public void setData(TweetInfoData data) {
         this.data = data;
     }
 
-    public TweetIncludeData getIncludes() {
+    public TweetInfoIncludes getIncludes() {
         return includes;
     }
 
-    public void setIncludes(TweetIncludeData includes) {
+    public void setIncludes(TweetInfoIncludes includes) {
         this.includes = includes;
     }
 
@@ -52,7 +52,7 @@ public class Tweet {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Tweet other = (Tweet) obj;
+        TweetInfo other = (TweetInfo) obj;
         if (data == null) {
             if (other.data != null)
                 return false;
@@ -73,7 +73,7 @@ public class Tweet {
 
     @Override
     public String toString() {
-        return "Tweet [data=" + data + ", includes=" + includes + ", matchingRules=" + matchingRules + "]";
+        return "TweetInfo [data=" + data + ", includes=" + includes + ", matchingRules=" + matchingRules + "]";
     }
 
 }

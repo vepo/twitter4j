@@ -1,4 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.vepo</groupId>
 	<artifactId>io.vepo.twitter4j</artifactId>
@@ -59,6 +61,11 @@
 			<artifactId>to-string-verifier</artifactId>
 			<version>1.4.8</version>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mock-server</groupId>
+			<artifactId>mockserver-junit-jupiter</artifactId>
+			<version>5.11.2</version>
 		</dependency>
 	</dependencies>
 
@@ -144,6 +151,6 @@
 		<url>scm:git:https://github.com/vepo/twitter4j.git</url>
 		<connection>scm:git:https://github.com/vepo/twitter4j.git</connection>
 		<developerConnection>scm:git:https://github.com/vepo/twitter4j.git</developerConnection>
-	  <tag>HEAD</tag>
-  </scm>
+		<tag>HEAD</tag>
+	</scm>
 </project>

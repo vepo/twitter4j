@@ -1,0 +1,242 @@
+{
+    "data": {
+        "source": "Twitter for Android",
+        "conversation_id": "1361319468534812675",
+        "public_metrics": {
+            "retweet_count": 86,
+            "reply_count": 0,
+            "like_count": 0,
+            "quote_count": 0
+        },
+        "created_at": "2021-02-15T14:20:28.000Z",
+        "entities": {
+            "annotations": [
+                {
+                    "start": 53,
+                    "end": 56,
+                    "probability": 0.4897,
+                    "type": "Organization",
+                    "normalized_text": "MST"
+                },
+                {
+                    "start": 66,
+                    "end": 74,
+                    "probability": 0.9996,
+                    "type": "Person",
+                    "normalized_text": "Bolsonaro"
+                }
+            ],
+            "urls": [
+                {
+                    "start": 78,
+                    "end": 101,
+                    "url": "https://t.co/oyfWYgMHqz",
+                    "expanded_url": "https://tercalivre.com.br/?p=166874",
+                    "display_url": "tercalivre.com.br/?p=166874",
+                    "images": [
+                        {
+                            "url": "https://pbs.twimg.com/news_img/1361288528995450888/W0R17yHI?format=jpg&name=orig",
+                            "width": 1280,
+                            "height": 720
+                        },
+                        {
+                            "url": "https://pbs.twimg.com/news_img/1361288528995450888/W0R17yHI?format=jpg&name=150x150",
+                            "width": 150,
+                            "height": 150
+                        }
+                    ],
+                    "status": 200,
+                    "title": "Acabaram as notcias de invases do MST, afirma Bolsonaro",
+                    "description": "O presidente da Repblica, Jair Bolsonaro, comentando as invases do Movimento dos Trabalhadores Rurais Sem Terra (MST), anunciou que o seu governo reduziu significativamente as notcias sobre invases de terra no Brasil. O pronunciamento ocorreu durante cerimnia para a entrega de 125 ttulos de",
+                    "unwound_url": "https://tercalivre.com.br/acabaram-as-noticias-de-invasoes-do-mst-afirma-bolsonaro/"
+                },
+                {
+                    "start": 102,
+                    "end": 125,
+                    "url": "https://t.co/QygyvqvbZ6",
+                    "expanded_url": "https://twitter.com/tercalivre/status/1361288522888589313/photo/1",
+                    "display_url": "pic.twitter.com/QygyvqvbZ6"
+                }
+            ],
+            "mentions": [
+                {
+                    "start": 3,
+                    "end": 14,
+                    "username": "tercalivre"
+                }
+            ]
+        },
+        "possibly_sensitive": false,
+        "attachments": {
+            "media_keys": [
+                "3_1361288521118584835"
+            ]
+        },
+        "lang": "pt",
+        "reply_settings": "everyone",
+        "author_id": "1124103345008934914",
+        "text": "RT @tercalivre: Acabaram as notcias de invases do MST, afirma Bolsonaro - https://t.co/oyfWYgMHqz https://t.co/QygyvqvbZ6",
+        "referenced_tweets": [
+            {
+                "type": "retweeted",
+                "id": "1361288522888589313"
+            }
+        ],
+        "id": "1361319468534812675"
+    },
+    "includes": {
+        "media": [
+            {
+                "media_key": "3_1361288521118584835",
+                "type": "photo",
+                "height": 720,
+                "width": 1280,
+                "url": "https://pbs.twimg.com/media/EuREspIXEAMaz_l.jpg"
+            }
+        ],
+        "users": [
+            {
+                "verified": false,
+                "description": "",
+                "url": "",
+                "profile_image_url": "https://pbs.twimg.com/profile_images/1296260778316759040/74yAZChm_normal.jpg",
+                "pinned_tweet_id": "1228399583035822080",
+                "id": "1124103345008934914",
+                "public_metrics": {
+                    "followers_count": 1904,
+                    "following_count": 2228,
+                    "tweet_count": 57670,
+                    "listed_count": 1
+                },
+                "created_at": "2019-05-03T00:08:17.000Z",
+                "name": "Scheila",
+                "protected": false,
+                "location": "Fortaleza, Brasil",
+                "username": "scheillamesqui1"
+            },
+            {
+                "verified": false,
+                "description": "Jornalismo sem dinheiro da SECOM. Qual outro jornal pode falar o mesmo? Assine o TL JUNTOS: https://t.co/STH07lUmQB",
+                "url": "https://t.co/ifERLrsHFw",
+                "profile_image_url": "https://pbs.twimg.com/profile_images/1230114266814001153/RtMCuRk1_normal.jpg",
+                "pinned_tweet_id": "1331710724247326722",
+                "id": "2886474167",
+                "public_metrics": {
+                    "followers_count": 430940,
+                    "following_count": 155,
+                    "tweet_count": 22301,
+                    "listed_count": 636
+                },
+                "created_at": "2014-11-21T03:30:54.000Z",
+                "name": "Portal Tera Livre",
+                "protected": false,
+                "location": "Brasil",
+                "entities": {
+                    "url": {
+                        "urls": [
+                            {
+                                "start": 0,
+                                "end": 23,
+                                "url": "https://t.co/ifERLrsHFw",
+                                "expanded_url": "http://www.tercalivre.com.br",
+                                "display_url": "tercalivre.com.br"
+                            }
+                        ]
+                    },
+                    "description": {
+                        "urls": [
+                            {
+                                "start": 92,
+                                "end": 115,
+                                "url": "https://t.co/STH07lUmQB",
+                                "expanded_url": "http://www.tercalivrejuntos.com.br",
+                                "display_url": "tercalivrejuntos.com.br"
+                            }
+                        ]
+                    }
+                },
+                "username": "tercalivre"
+            }
+        ],
+        "tweets": [
+            {
+                "source": "TL Twitter APP WP",
+                "conversation_id": "1361288522888589313",
+                "public_metrics": {
+                    "retweet_count": 86,
+                    "reply_count": 13,
+                    "like_count": 754,
+                    "quote_count": 0
+                },
+                "created_at": "2021-02-15T12:17:30.000Z",
+                "entities": {
+                    "annotations": [
+                        {
+                            "start": 37,
+                            "end": 39,
+                            "probability": 0.7406,
+                            "type": "Organization",
+                            "normalized_text": "MST"
+                        },
+                        {
+                            "start": 50,
+                            "end": 58,
+                            "probability": 0.9996,
+                            "type": "Person",
+                            "normalized_text": "Bolsonaro"
+                        }
+                    ],
+                    "urls": [
+                        {
+                            "start": 62,
+                            "end": 85,
+                            "url": "https://t.co/oyfWYgMHqz",
+                            "expanded_url": "https://tercalivre.com.br/?p=166874",
+                            "display_url": "tercalivre.com.br/?p=166874",
+                            "images": [
+                                {
+                                    "url": "https://pbs.twimg.com/news_img/1361288528995450888/W0R17yHI?format=jpg&name=orig",
+                                    "width": 1280,
+                                    "height": 720
+                                },
+                                {
+                                    "url": "https://pbs.twimg.com/news_img/1361288528995450888/W0R17yHI?format=jpg&name=150x150",
+                                    "width": 150,
+                                    "height": 150
+                                }
+                            ],
+                            "status": 200,
+                            "title": "Acabaram as notcias de invases do MST, afirma Bolsonaro",
+                            "description": "O presidente da Repblica, Jair Bolsonaro, comentando as invases do Movimento dos Trabalhadores Rurais Sem Terra (MST), anunciou que o seu governo reduziu significativamente as notcias sobre invases de terra no Brasil. O pronunciamento ocorreu durante cerimnia para a entrega de 125 ttulos de",
+                            "unwound_url": "https://tercalivre.com.br/acabaram-as-noticias-de-invasoes-do-mst-afirma-bolsonaro/"
+                        },
+                        {
+                            "start": 86,
+                            "end": 109,
+                            "url": "https://t.co/QygyvqvbZ6",
+                            "expanded_url": "https://twitter.com/tercalivre/status/1361288522888589313/photo/1",
+                            "display_url": "pic.twitter.com/QygyvqvbZ6"
+                        }
+                    ]
+                },
+                "possibly_sensitive": false,
+                "attachments": {
+                    "media_keys": [
+                        "3_1361288521118584835"
+                    ]
+                },
+                "lang": "pt",
+                "reply_settings": "everyone",
+                "author_id": "2886474167",
+                "text": "Acabaram as notcias de invases do MST, afirma Bolsonaro - https://t.co/oyfWYgMHqz https://t.co/QygyvqvbZ6",
+                "id": "1361288522888589313"
+            }
+        ]
+    },
+    "matching_rules": [
+        {
+            "id": 1361319498956079104,
+            "tag": "Bolsonaro"
+        }
+    ]
+}

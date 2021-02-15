@@ -1,0 +1,221 @@
+{
+    "data": {
+        "author_id": "1275049326860021760",
+        "possibly_sensitive": false,
+        "entities": {
+            "hashtags": [
+                {
+                    "start": 107,
+                    "end": 121,
+                    "tag": "depheliolopes"
+                },
+                {
+                    "start": 122,
+                    "end": 139,
+                    "tag": "minhacorobrasil"
+                }
+            ],
+            "mentions": [
+                {
+                    "start": 3,
+                    "end": 17,
+                    "username": "depheliolopes"
+                }
+            ],
+            "urls": [
+                {
+                    "start": 82,
+                    "end": 105,
+                    "url": "https://t.co/gf2AQLvUkt",
+                    "expanded_url": "http://T.me/depheliolopes",
+                    "display_url": "T.me/depheliolopes",
+                    "images": [
+                        {
+                            "url": "https://pbs.twimg.com/news_img/1359546044183371777/dIxnw9MT?format=jpg&name=orig",
+                            "width": 320,
+                            "height": 320
+                        },
+                        {
+                            "url": "https://pbs.twimg.com/news_img/1359546044183371777/dIxnw9MT?format=jpg&name=150x150",
+                            "width": 150,
+                            "height": 150
+                        }
+                    ],
+                    "status": 200,
+                    "title": "Deputado Helio Lopes",
+                    "description": "Canal oficial do Deputado Federal Helio Lopes",
+                    "unwound_url": "https://t.me/depheliolopes"
+                }
+            ],
+            "annotations": [
+                {
+                    "start": 30,
+                    "end": 38,
+                    "probability": 0.9961,
+                    "type": "Person",
+                    "normalized_text": "Bolsonaro"
+                }
+            ]
+        },
+        "created_at": "2021-02-15T14:35:17.000Z",
+        "referenced_tweets": [
+            {
+                "type": "retweeted",
+                "id": "1360896963374428161"
+            }
+        ],
+        "text": "RT @depheliolopes: Presidente Bolsonaro fala sobre ARMAS!\n\nAcesse nosso telegram: https://t.co/gf2AQLvUkt\n\n#depheliolopes #minhacorobrasil",
+        "lang": "pt",
+        "conversation_id": "1361323198407708674",
+        "reply_settings": "everyone",
+        "id": "1361323198407708674",
+        "source": "Twitter for Android",
+        "public_metrics": {
+            "retweet_count": 247,
+            "reply_count": 0,
+            "like_count": 0,
+            "quote_count": 0
+        }
+    },
+    "includes": {
+        "users": [
+            {
+                "url": "",
+                "protected": false,
+                "description": "",
+                "public_metrics": {
+                    "followers_count": 13,
+                    "following_count": 156,
+                    "tweet_count": 299,
+                    "listed_count": 0
+                },
+                "verified": false,
+                "name": "Wander Alcntara",
+                "id": "1275049326860021760",
+                "profile_image_url": "https://pbs.twimg.com/profile_images/1275051993749471232/GL5kPNwA_normal.jpg",
+                "created_at": "2020-06-22T12:54:53.000Z",
+                "username": "WanderAlcntara2"
+            },
+            {
+                "url": "https://t.co/lop4NQWVSw",
+                "protected": false,
+                "description": " Subtenente do Exrcito Brasileiro  Perito Criminal  Graduado em Gesto Pblica e Financeira  Dep Fed mais votado do RJ Instagram: DepHelioLopes",
+                "public_metrics": {
+                    "followers_count": 315425,
+                    "following_count": 275,
+                    "tweet_count": 19452,
+                    "listed_count": 427
+                },
+                "verified": true,
+                "name": "Helio Lopes",
+                "entities": {
+                    "url": {
+                        "urls": [
+                            {
+                                "start": 0,
+                                "end": 23,
+                                "url": "https://t.co/lop4NQWVSw",
+                                "expanded_url": "https://www.camara.leg.br/deputados/204444",
+                                "display_url": "camara.leg.br/deputados/2044"
+                            }
+                        ]
+                    }
+                },
+                "id": "2585621855",
+                "profile_image_url": "https://pbs.twimg.com/profile_images/1213548356309528578/tyyyMRVm_normal.jpg",
+                "created_at": "2014-06-06T00:46:17.000Z",
+                "username": "depheliolopes"
+            }
+        ],
+        "tweets": [
+            {
+                "author_id": "2585621855",
+                "possibly_sensitive": false,
+                "entities": {
+                    "hashtags": [
+                        {
+                            "start": 88,
+                            "end": 102,
+                            "tag": "depheliolopes"
+                        },
+                        {
+                            "start": 103,
+                            "end": 120,
+                            "tag": "minhacorobrasil"
+                        },
+                        {
+                            "start": 121,
+                            "end": 138,
+                            "tag": "bolsonaroat2026"
+                        }
+                    ],
+                    "urls": [
+                        {
+                            "start": 63,
+                            "end": 86,
+                            "url": "https://t.co/gf2AQLvUkt",
+                            "expanded_url": "http://T.me/depheliolopes",
+                            "display_url": "T.me/depheliolopes",
+                            "images": [
+                                {
+                                    "url": "https://pbs.twimg.com/news_img/1359546044183371777/dIxnw9MT?format=jpg&name=orig",
+                                    "width": 320,
+                                    "height": 320
+                                },
+                                {
+                                    "url": "https://pbs.twimg.com/news_img/1359546044183371777/dIxnw9MT?format=jpg&name=150x150",
+                                    "width": 150,
+                                    "height": 150
+                                }
+                            ],
+                            "status": 200,
+                            "title": "Deputado Helio Lopes",
+                            "description": "Canal oficial do Deputado Federal Helio Lopes",
+                            "unwound_url": "https://t.me/depheliolopes"
+                        },
+                        {
+                            "start": 139,
+                            "end": 162,
+                            "url": "https://t.co/YslK0q8F82",
+                            "expanded_url": "https://twitter.com/depheliolopes/status/1360896963374428161/video/1",
+                            "display_url": "pic.twitter.com/YslK0q8F82"
+                        }
+                    ],
+                    "annotations": [
+                        {
+                            "start": 11,
+                            "end": 19,
+                            "probability": 0.9869,
+                            "type": "Person",
+                            "normalized_text": "Bolsonaro"
+                        }
+                    ]
+                },
+                "created_at": "2021-02-14T10:21:34.000Z",
+                "text": "Presidente Bolsonaro fala sobre ARMAS!\n\nAcesse nosso telegram: https://t.co/gf2AQLvUkt\n\n#depheliolopes #minhacorobrasil #bolsonaroat2026 https://t.co/YslK0q8F82",
+                "lang": "pt",
+                "conversation_id": "1360896963374428161",
+                "reply_settings": "everyone",
+                "id": "1360896963374428161",
+                "attachments": {
+                    "media_keys": [
+                        "7_1360896738194784257"
+                    ]
+                },
+                "source": "Twitter for Android",
+                "public_metrics": {
+                    "retweet_count": 247,
+                    "reply_count": 21,
+                    "like_count": 1506,
+                    "quote_count": 7
+                }
+            }
+        ]
+    },
+    "matching_rules": [
+        {
+            "id": 1361323231978921988,
+            "tag": "Bolsonaro"
+        }
+    ]
+}

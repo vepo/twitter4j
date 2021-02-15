@@ -1,0 +1,12 @@
+{
+    "data": {
+        "id": "1361293219296923648",
+        "text": "RT @tercalivre: Acabaram as notcias de invases do MST, afirma Bolsonaro - https://t.co/oyfWYgMHqz https://t.co/QygyvqvbZ6"
+    },
+    "matching_rules": [
+        {
+            "id": 1361293245515456513,
+            "tag": "Bolsonaro Tweets"
+        }
+    ]
+}
