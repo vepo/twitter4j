@@ -1,4 +1,4 @@
-package io.vepo.twitter4j.api;
+package io.vepo.twitter4j.impl.api;
 
 import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_EMPTY;
 

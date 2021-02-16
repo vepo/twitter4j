@@ -8,4 +8,5 @@ module io.vepo.twitter4j {
     requires org.slf4j;
 
     exports io.vepo.twitter4j;
+    exports io.vepo.twitter4j.stream;
 }

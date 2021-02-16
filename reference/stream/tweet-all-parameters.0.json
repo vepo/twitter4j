@@ -1,0 +1,263 @@
+{
+    "data": {
+        "conversation_id": "1361302402788376576",
+        "context_annotations": [
+            {
+                "domain": {
+                    "id": "10",
+                    "name": "Person",
+                    "description": "Named people in the world like Nelson Mandela"
+                },
+                "entity": {
+                    "id": "889972468953128960",
+                    "name": "EXO",
+                    "description": "Members: Suho (??), Chanyeol (??), Kai (??), D.O (??), Baekhyun (??), Sehun (??), Xiumin (???), Chen (?), Lay (??)"
+                }
+            },
+            {
+                "domain": {
+                    "id": "54",
+                    "name": "Musician",
+                    "description": "A musician in the world, like Adele or Bob Dylan"
+                },
+                "entity": {
+                    "id": "889972468953128960",
+                    "name": "EXO",
+                    "description": "Members: Suho (??), Chanyeol (??), Kai (??), D.O (??), Baekhyun (??), Sehun (??), Xiumin (???), Chen (?), Lay (??)"
+                }
+            },
+            {
+                "domain": {
+                    "id": "55",
+                    "name": "Music Genre",
+                    "description": "A category for a musical style, like Pop, Rock, or Rap"
+                },
+                "entity": {
+                    "id": "888105153038958593",
+                    "name": "K-pop",
+                    "description": "K-Pop"
+                }
+            }
+        ],
+        "source": "Twitter for iPhone",
+        "possibly_sensitive": false,
+        "entities": {
+            "mentions": [
+                {
+                    "start": 3,
+                    "end": 16,
+                    "username": "SigaGazetaBR"
+                }
+            ],
+            "annotations": [
+                {
+                    "start": 63,
+                    "end": 93,
+                    "probability": 0.7072,
+                    "type": "Organization",
+                    "normalized_text": "Centro Mdico Ichilov de Israel"
+                }
+            ]
+        },
+        "id": "1361302402788376576",
+        "referenced_tweets": [
+            {
+                "type": "retweeted",
+                "id": "1361299644815450115"
+            }
+        ],
+        "author_id": "876202269968125952",
+        "created_at": "2021-02-15T13:12:39.000Z",
+        "public_metrics": {
+            "retweet_count": 24,
+            "reply_count": 0,
+            "like_count": 0,
+            "quote_count": 0
+        },
+        "lang": "pt",
+        "reply_settings": "everyone",
+        "text": "RT @SigaGazetaBR: EXO-CD24  um spray nasal desenvolvido pelo Centro Mdico Ichilov de Israel, com eficcia prxima de 100% (29/30), em ca"
+    },
+    "includes": {
+        "users": [
+            {
+                "pinned_tweet_id": "1182247334492557312",
+                "verified": false,
+                "id": "876202269968125952",
+                "protected": false,
+                "public_metrics": {
+                    "followers_count": 3058,
+                    "following_count": 4916,
+                    "tweet_count": 42816,
+                    "listed_count": 1
+                },
+                "url": "",
+                "description": "Um Estado mnimo faz grandes cidados. Vida. Propriedade. Liberdade.",
+                "profile_image_url": "https://pbs.twimg.com/profile_images/1259609713639120902/Of171ohs_normal.jpg",
+                "name": "Ester ??",
+                "username": "Ester38Ester",
+                "created_at": "2017-06-17T22:17:54.000Z"
+            },
+            {
+                "pinned_tweet_id": "1361100006883786754",
+                "verified": false,
+                "id": "1090291692744466433",
+                "protected": false,
+                "public_metrics": {
+                    "followers_count": 58200,
+                    "following_count": 501,
+                    "tweet_count": 27638,
+                    "listed_count": 104
+                },
+                "url": "https://t.co/5Q4wv3BW2I",
+                "entities": {
+                    "url": {
+                        "urls": [
+                            {
+                                "start": 0,
+                                "end": 23,
+                                "url": "https://t.co/5Q4wv3BW2I",
+                                "expanded_url": "http://www.gazetabrasil.com.br",
+                                "display_url": "gazetabrasil.com.br"
+                            }
+                        ]
+                    },
+                    "description": {
+                        "urls": [
+                            {
+                                "start": 48,
+                                "end": 71,
+                                "url": "https://t.co/w1IFaLlQlJ",
+                                "expanded_url": "https://t.me/GazetaBrasilNews",
+                                "display_url": "t.me/GazetaBrasilNe"
+                            }
+                        ],
+                        "mentions": [
+                            {
+                                "start": 20,
+                                "end": 37,
+                                "username": "sigagazetabrasil"
+                            }
+                        ]
+                    }
+                },
+                "description": "Instagram/facebook: @sigagazetabrasil\nTelegram: https://t.co/w1IFaLlQlJ",
+                "profile_image_url": "https://pbs.twimg.com/profile_images/1214728773343559680/Lh0g3-k-_normal.jpg",
+                "name": "Gazeta Brasil",
+                "username": "SigaGazetaBR",
+                "created_at": "2019-01-29T16:52:50.000Z",
+                "location": "So Paulo, Brasil"
+            }
+        ],
+        "tweets": [
+            {
+                "conversation_id": "1361299644815450115",
+                "context_annotations": [
+                    {
+                        "domain": {
+                            "id": "123",
+                            "name": "Ongoing News Story",
+                            "description": "Ongoing News Stories like 'Brexit'"
+                        },
+                        "entity": {
+                            "id": "1220701888179359745",
+                            "name": "COVID-19"
+                        }
+                    },
+                    {
+                        "domain": {
+                            "id": "10",
+                            "name": "Person",
+                            "description": "Named people in the world like Nelson Mandela"
+                        },
+                        "entity": {
+                            "id": "889972468953128960",
+                            "name": "EXO",
+                            "description": "Members: Suho (??), Chanyeol (??), Kai (??), D.O (??), Baekhyun (??), Sehun (??), Xiumin (???), Chen (?), Lay (??)"
+                        }
+                    },
+                    {
+                        "domain": {
+                            "id": "54",
+                            "name": "Musician",
+                            "description": "A musician in the world, like Adele or Bob Dylan"
+                        },
+                        "entity": {
+                            "id": "889972468953128960",
+                            "name": "EXO",
+                            "description": "Members: Suho (??), Chanyeol (??), Kai (??),D.O (??), Baekhyun (??), Sehun (??), Xiumin (???), Chen (?), Lay (??)"
+                        }
+                    },
+                    {
+                        "domain": {
+                            "id": "55",
+                            "name": "Music Genre",
+                            "description": "A category for a musical style, like Pop, Rock, or Rap"
+                        },
+                        "entity": {
+                            "id": "888105153038958593",
+                            "name": "K-pop",
+                            "description": "K-Pop"
+                        }
+                    }
+                ],
+                "source": "Twitter Web App",
+                "possibly_sensitive": false,
+                "id": "1361299644815450115",
+                "author_id": "1090291692744466433",
+                "created_at": "2021-02-15T13:01:41.000Z",
+                "entities": {
+                    "annotations": [
+                        {
+                            "start": 45,
+                            "end": 75,
+                            "probability": 0.5677,
+                            "type": "Organization",
+                            "normalized_text": "Centro Mdico Ichilov de Israel"
+                        }
+                    ],
+                    "urls": [
+                        {
+                            "start": 194,
+                            "end": 217,
+                            "url": "https://t.co/6MRnqVnoMi",
+                            "expanded_url": "https://gazetabrasil.com.br/especiais/jair-bolsonaro/spray-de-israel-contra-a-covid-19-sera-analisado-pela-anvisa-anuncia-bolsonaro/",
+                            "display_url": "gazetabrasil.com.br/especiais/jair",
+                            "images": [
+                                {
+                                    "url": "https://pbs.twimg.com/news_img/1361299648003121153/GYL0LWFO?format=jpg&name=orig",
+                                    "width": 2560,
+                                    "height": 1706
+                                },
+                                {
+                                    "url": "https://pbs.twimg.com/news_img/1361299648003121153/GYL0LWFO?format=jpg&name=150x150",
+                                    "width": 150,
+                                    "height": 150
+                                }
+                            ],
+                            "status": 200,
+                            "title": "'Spray de Israel contra a Covid-19 ser analisado pela Anvisa', anuncia Bolsonaro",
+                            "description": "'Spray de Israel contra a Covid-19 ser analisado pela Anvisa', anuncia Bolsonaro",
+                            "unwound_url": "https://gazetabrasil.com.br/especiais/jair-bolsonaro/spray-de-israel-contra-a-covid-19-sera-analisado-pela-anvisa-anuncia-bolsonaro/"
+                        }
+                    ]
+                },
+                "public_metrics": {
+                    "retweet_count": 24,
+                    "reply_count": 3,
+                    "like_count": 107,
+                    "quote_count": 1
+                },
+                "lang": "pt",
+                "reply_settings": "everyone",
+                "text": "EXO-CD24  um spray nasal desenvolvido pelo Centro Mdico Ichilovde Israel, com eficcia prxima de 100% (29/30), em casos graves, contra a Covid, comemorou o presidente ao fazer o anncio.\n\nhttps://t.co/6MRnqVnoMi"
+            }
+        ]
+    },
+    "matching_rules": [
+        {
+            "id": 1361302436162502659,
+            "tag": "Bolsonaro"
+        }
+    ]
+}

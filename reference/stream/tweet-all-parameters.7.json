@@ -1,0 +1,282 @@
+{
+    "data": {
+        "reply_settings": "everyone",
+        "text": "@bbcbrasil  assim que funciona nosso sistema tributrio. Feito para as megas corporaes se perpetuarem e nunca darem espao ao livre mercado.\nhttps://t.co/LzeDXI8TN6",
+        "possibly_sensitive": false,
+        "lang": "pt",
+        "created_at": "2021-02-15T16:13:21.000Z",
+        "id": "1361347878229331969",
+        "author_id": "1300446023551254529",
+        "conversation_id": "1361276341988040705",
+        "referenced_tweets": [
+            {
+                "type": "replied_to",
+                "id": "1361279696869208067"
+            }
+        ],
+        "entities": {
+            "mentions": [
+                {
+                    "start": 0,
+                    "end": 10,
+                    "username": "bbcbrasil"
+                }
+            ],
+            "urls": [
+                {
+                    "start": 144,
+                    "end": 167,
+                    "url": "https://t.co/LzeDXI8TN6",
+                    "expanded_url": "https://theintercept.com/2021/02/12/coca-cola-e-ambev-lucram-com-impostos-e-recebem-r-16-bi-de-guedes-e-bolsonaro/",
+                    "display_url": "theintercept.com/2021/02/12/coc",
+                    "images": [
+                        {
+                            "url": "https://pbs.twimg.com/news_img/1360228055180922884/yg-T_5FY?format=jpg&name=orig",
+                            "width": 1200,
+                            "height": 628
+                        },
+                        {
+                            "url": "https://pbs.twimg.com/news_img/1360228055180922884/yg-T_5FY?format=jpg&name=150x150",
+                            "width": 150,
+                            "height": 150
+                        }
+                    ],
+                    "status": 200,
+                    "title": "Coca e Ambev ganham R$ 1,6 bilho pblico de Guedes e Bolsonaro",
+                    "description": "Fabricantes de refrigerantes voltam a cobrar crditos por impostos que nunca pagaram com decreto do governo federal  que ainda cogita legalizar fraude na produo de xaropes.",
+                    "unwound_url": "https://theintercept.com/2021/02/12/coca-cola-e-ambev-lucram-com-impostos-e-recebem-r-16-bi-de-guedes-e-bolsonaro/"
+                }
+            ]
+        },
+        "public_metrics": {
+            "retweet_count": 0,
+            "reply_count": 0,
+            "like_count": 0,
+            "quote_count": 0
+        },
+        "in_reply_to_user_id": "790680",
+        "source": "Twitter for iPhone",
+        "context_annotations": [
+            {
+                "domain": {
+                    "id": "45",
+                    "name": "Brand Vertical",
+                    "description": "Top level entities that describe a Brands industry"
+                },
+                "entity": {
+                    "id": "781974597310615553",
+                    "name": "Entertainment"
+                }
+            },
+            {
+                "domain": {
+                    "id": "46",
+                    "name": "Brand Category",
+                    "description": "Categories within Brand Verticals that narrow down the scope of Brands"
+                },
+                "entity": {
+                    "id": "781974596157181956",
+                    "name": "Online Site"
+                }
+            },
+            {
+                "domain": {
+                    "id": "46",
+                    "name": "Brand Category",
+                    "description": "Categories within Brand Verticals that narrow down the scope of Brands"
+                },
+                "entity": {
+                    "id": "781974597105094656",
+                    "name": "TV/Movies Related"
+                }
+            },
+            {
+                "domain": {
+                    "id": "47",
+                    "name": "Brand",
+                    "description": "Brands and Companies"
+                },
+                "entity": {
+                    "id": "1065659570578612224",
+                    "name": "BBC",
+                    "description": "BBC"
+                }
+            }
+        ]
+    },
+    "includes": {
+        "users": [
+            {
+                "id": "1300446023551254529",
+                "name": "Lucas Bitti Vescovi",
+                "url": "",
+                "profile_image_url": "https://pbs.twimg.com/profile_images/1300447011980877825/AqQW7_G9_normal.jpg",
+                "created_at": "2020-08-31T14:51:13.000Z",
+                "protected": false,
+                "description": "Engenheiro Agrnomo pela Universidade Federal de Gois (UFG). Empresrio. Dedicado ao mercado de produo (real)",
+                "username": "bitti_lucas",
+                "location": "Brasil",
+                "public_metrics": {
+                    "followers_count": 8,
+                    "following_count": 69,
+                    "tweet_count": 556,
+                    "listed_count": 0
+                },
+                "verified": false
+            },
+            {
+                "id": "790680",
+                "name": "BBC News Brasil",
+                "url": "https://t.co/PnlPk1tFwQ",
+                "profile_image_url": "https://pbs.twimg.com/profile_images/1004666132253507584/gTEhhS7D_normal.jpg",
+                "entities": {
+                    "url": {
+                        "urls": [
+                            {
+                                "start": 0,
+                                "end": 23,
+                                "url": "https://t.co/PnlPk1tFwQ",
+                                "expanded_url": "http://bbcbrasil.com",
+                                "display_url": "bbcbrasil.com"
+                            }
+                        ]
+                    }
+                },
+                "created_at": "2007-02-23T12:27:26.000Z",
+                "protected": false,
+                "description": "Eu sou a BBC News Brasil e tuto sobre notcias no Brasil e no mundo. Participe de um dilogo global aqui comigo!",
+                "username": "bbcbrasil",
+                "location": "Londres, GB, e So Paulo, BR",
+                "public_metrics": {
+                    "followers_count": 2823300,
+                    "following_count": 912,
+                    "tweet_count": 233233,
+                    "listed_count": 8647
+                },
+                "verified": true
+            }
+        ],
+        "tweets": [
+            {
+                "reply_settings": "everyone",
+                "text": "Pessoal, aqui com o link correto:\n\nTaxar ricos para financiar poltica social elevaria PIB do Brasil em 2,4%, diz estudo da USP\nhttps://t.co/HIhR5Lm8R6",
+                "possibly_sensitive": false,
+                "lang": "pt",
+                "created_at": "2021-02-15T11:42:25.000Z",
+                "id": "1361279696869208067",
+                "author_id": "790680",
+                "conversation_id": "1361276341988040705",
+                "referenced_tweets": [
+                    {
+                        "type": "replied_to",
+                        "id": "1361276341988040705"
+                    }
+                ],
+                "public_metrics": {
+                    "retweet_count": 367,
+                    "reply_count": 71,
+                    "like_count": 1340,
+                    "quote_count": 103
+                },
+                "entities": {
+                    "urls": [
+                        {
+                            "start": 128,
+                            "end": 151,
+                            "url": "https://t.co/HIhR5Lm8R6",
+                            "expanded_url": "https://www.bbc.com/portuguese/brasil-56049425",
+                            "display_url": "bbc.com/portuguese/bra",
+                            "images": [
+                                {
+                                    "url": "https://pbs.twimg.com/news_img/1361239088846766087/W7D1IHTG?format=jpg&name=orig",
+                                    "width": 1024,
+                                    "height": 576
+                                },
+                                {
+                                    "url": "https://pbs.twimg.com/news_img/1361239088846766087/W7D1IHTG?format=jpg&name=150x150",
+                                    "width": 150,
+                                    "height": 150
+                                }
+                            ],
+                            "status": 200,
+                            "title": "Taxar ricos para financiar poltica social elevaria PIB em 2,4%, diz estudo da USP - BBC News Brasil",
+                            "description": "Segundo grupo de pesquisa da economista Laura Carvalho, redistribuir renda pode ajudar na recuperao da economia sem agravar a situao fiscal.",
+                            "unwound_url": "https://www.bbc.com/portuguese/brasil-56049425"
+                        }
+                    ],
+                    "annotations": [
+                        {
+                            "start": 94,
+                            "end": 99,
+                            "probability": 0.9596,
+                            "type": "Place",
+                            "normalized_text": "Brasil"
+                        },
+                        {
+                            "start": 124,
+                            "end": 126,
+                            "probability": 0.9619,
+                            "type": "Organization",
+                            "normalized_text": "USP"
+                        }
+                    ]
+                },
+                "in_reply_to_user_id": "790680",
+                "source": "Twitter Web App",
+                "context_annotations": [
+                    {
+                        "domain": {
+                            "id": "45",
+                            "name": "Brand Vertical",
+                            "description": "Top level entities that describe a Brands industry"
+                        },
+                        "entity": {
+                            "id": "781974597310615553",
+                            "name": "Entertainment"
+                        }
+                    },
+                    {
+                        "domain": {
+                            "id": "46",
+                            "name": "Brand Category",
+                            "description": "Categories within Brand Verticals that narrow down the scope of Brands"
+                        },
+                        "entity": {
+                            "id": "781974596157181956",
+                            "name": "Online Site"
+                        }
+                    },
+                    {
+                        "domain": {
+                            "id": "46",
+                            "name": "Brand Category",
+                            "description": "Categories within Brand Verticals that narrow down the scope of Brands"
+                        },
+                        "entity": {
+                            "id": "781974597105094656",
+                            "name": "TV/Movies Related"
+                        }
+                    },
+                    {
+                        "domain": {
+                            "id": "47",
+                            "name": "Brand",
+                            "description": "Brands and Companies"
+                        },
+                        "entity": {
+                            "id": "1065659570578612224",
+                            "name": "BBC",
+                            "description": "BBC"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "matching_rules": [
+        {
+            "id": 1361347799124758529,
+            "tag": "Bolsonaro"
+        }
+    ]
+}

@@ -1,0 +1,182 @@
+{
+    "data": {
+        "id": "1361349222809952257",
+        "created_at": "2021-02-15T16:18:42.000Z",
+        "conversation_id": "1361349222809952257",
+        "lang": "pt",
+        "public_metrics": {
+            "retweet_count": 0,
+            "reply_count": 0,
+            "like_count": 0,
+            "quote_count": 0
+        },
+        "entities": {
+            "annotations": [
+                {
+                    "start": 11,
+                    "end": 17,
+                    "probability": 0.9944,
+                    "type": "Person",
+                    "normalized_text": "Damares"
+                },
+                {
+                    "start": 21,
+                    "end": 38,
+                    "probability": 0.9831,
+                    "type": "Person",
+                    "normalized_text": "Michelle Bolsonaro"
+                },
+                {
+                    "start": 74,
+                    "end": 80,
+                    "probability": 0.6103,
+                    "type": "Person",
+                    "normalized_text": "Damares"
+                },
+                {
+                    "start": 143,
+                    "end": 150,
+                    "probability": 0.9447,
+                    "type": "Person",
+                    "normalized_text": "Michelle"
+                },
+                {
+                    "start": 232,
+                    "end": 238,
+                    "probability": 0.7516,
+                    "type": "Product",
+                    "normalized_text": "YouTube"
+                }
+            ],
+            "urls": [
+                {
+                    "start": 240,
+                    "end": 263,
+                    "url": "https://t.co/QGq1N6y9XN",
+                    "expanded_url": "https://twitter.com/bolsovertigem/status/1361349222809952257/video/1",
+                    "display_url": "pic.twitter.com/QGq1N6y9XN"
+                }
+            ]
+        },
+        "possibly_sensitive": false,
+        "text": "Pensam que Damares e Michelle Bolsonaro so queridas na extrema direita?\n\nDamares mantm uma travesti em cargo comissionado no seu ministrio. Michelle faz stories com seu maquiador gay.\n\nObs: a radio shockwave tem 50k inscritos no YouTube https://t.co/QGq1N6y9XN",
+        "source": "Twitter for Android",
+        "author_id": "1361312855476363266",
+        "context_annotations": [
+            {
+                "domain": {
+                    "id": "10",
+                    "name": "Person",
+                    "description": "Named people in the world like Nelson Mandela"
+                },
+                "entity": {
+                    "id": "1318549962372730880",
+                    "name": "Damares Alves"
+                }
+            },
+            {
+                "domain": {
+                    "id": "35",
+                    "name": "Politician",
+                    "description": "Politicians in the world, like Joe Biden"
+                },
+                "entity": {
+                    "id": "1318549962372730880",
+                    "name": "Damares Alves"
+                }
+            },
+            {
+                "domain": {
+                    "id": "65",
+                    "name": "Interests and Hobbies Vertical",
+                    "description": "Top level interests and hobbies groupings, like Food or Travel"
+                },
+                "entity": {
+                    "id": "850395585941086209",
+                    "name": "Beauty",
+                    "description": "Beauty"
+                }
+            },
+            {
+                "domain": {
+                    "id": "66",
+                    "name": "Interests and Hobbies Category",
+                    "description": "A grouping of interests and hobbies entities, like Novelty Food or Destinations"
+                },
+                "entity": {
+                    "id": "855442035314089988",
+                    "name": "Makeup",
+                    "description": "Make-up and Cosmetics"
+                }
+            },
+            {
+                "domain": {
+                    "id": "46",
+                    "name": "Brand Category",
+                    "description": "Categories within Brand Verticals that narrow down the scope of Brands"
+                },
+                "entity": {
+                    "id": "781974596752842752",
+                    "name": "Services"
+                }
+            },
+            {
+                "domain": {
+                    "id": "47",
+                    "name": "Brand",
+                    "description": "Brands and Companies"
+                },
+                "entity": {
+                    "id": "10029382357",
+                    "name": "YouTube"
+                }
+            }
+        ],
+        "reply_settings": "everyone",
+        "attachments": {
+            "media_keys": [
+                "7_1361348631773782017"
+            ]
+        }
+    },
+    "includes": {
+        "media": [
+            {
+                "height": 160,
+                "preview_image_url": "https://pbs.twimg.com/ext_tw_video_thumb/1361348631773782017/pu/img/okGoRBWGKRG2AQ2u.jpg",
+                "type": "video",
+                "width": 316,
+                "duration_ms": 110253,
+                "media_key": "7_1361348631773782017",
+                "public_metrics": {
+                    "view_count": 0
+                }
+            }
+        ],
+        "users": [
+            {
+                "name": "Bolsonarismo em vertigem",
+                "verified": false,
+                "created_at": "2021-02-15T13:54:20.000Z",
+                "public_metrics": {
+                    "followers_count": 0,
+                    "following_count": 143,
+                    "tweet_count": 6,
+                    "listed_count": 0
+                },
+                "id": "1361312855476363266",
+                "protected": false,
+                "description": "Quem v de fora, no imagina. O bolsonarismo  uma colcha de retalhos, um barril de plvora prestes a explodir.",
+                "username": "bolsovertigem",
+                "url": "",
+                "profile_image_url": "https://pbs.twimg.com/profile_images/1361321476163575814/GW099OOh_normal.jpg"
+            }
+        ]
+    },
+    "matching_rules": [
+        {
+            "id": 1361349173203902464,
+            "tag": "Bolsonaro"
+        }
+    ]
+}

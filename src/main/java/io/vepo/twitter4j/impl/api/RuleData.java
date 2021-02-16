@@ -1,4 +1,4 @@
-package io.vepo.twitter4j.api;
+package io.vepo.twitter4j.impl.api;
 
 public class RuleData {
     private String id;

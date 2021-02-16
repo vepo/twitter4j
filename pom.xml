@@ -1,4 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.vepo</groupId>
 	<artifactId>io.vepo.twitter4j</artifactId>
@@ -8,6 +10,9 @@
 	<packaging>jar</packaging>
 
 	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
 		<sonar.projectKey>vepo_twitter4j</sonar.projectKey>
 		<sonar.organization>vepo-github</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
@@ -60,6 +65,12 @@
 			<version>1.4.8</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.mock-server</groupId>
+			<artifactId>mockserver-junit-jupiter</artifactId>
+			<version>5.11.2</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -85,7 +96,11 @@
 							@{argLine}
 							--add-modules ALL-SYSTEM
 							--add-opens java.base/jdk.internal.util=ALL-UNNAMED
+							--add-opens java.base/java.lang.reflect=ALL-UNNAMED
 							--add-opens io.vepo.twitter4j/io.vepo.twitter4j=ALL-UNNAMED
+							--add-opens io.vepo.twitter4j/io.vepo.twitter4j.stream=ALL-UNNAMED
+							--add-opens io.vepo.twitter4j/io.vepo.twitter4j.impl=ALL-UNNAMED
+							--add-exports io.vepo.twitter4j/io.vepo.twitter4j.impl.api=com.fasterxml.jackson.databind
 							--illegal-access=permit
 						]]>
 					</argLine>
@@ -144,6 +159,6 @@
 		<url>scm:git:https://github.com/vepo/twitter4j.git</url>
 		<connection>scm:git:https://github.com/vepo/twitter4j.git</connection>
 		<developerConnection>scm:git:https://github.com/vepo/twitter4j.git</developerConnection>
-	  <tag>HEAD</tag>
-  </scm>
+		<tag>HEAD</tag>
+	</scm>
 </project>

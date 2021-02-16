@@ -1,0 +1,197 @@
+{
+    "data": {
+        "reply_settings": "everyone",
+        "text": "RT @DCM_online: Charge: A escolha muito difcil de Bolsonaro. Por Jota Cancelo https://t.co/RyFQGLGB5y",
+        "possibly_sensitive": false,
+        "lang": "pt",
+        "created_at": "2021-02-15T14:30:43.000Z",
+        "id": "1361322048656711683",
+        "author_id": "487110460",
+        "conversation_id": "1361322048656711683",
+        "referenced_tweets": [
+            {
+                "type": "retweeted",
+                "id": "1361293525573373955"
+            }
+        ],
+        "entities": {
+            "mentions": [
+                {
+                    "start": 3,
+                    "end": 14,
+                    "username": "DCM_online"
+                }
+            ],
+            "urls": [
+                {
+                    "start": 81,
+                    "end": 104,
+                    "url": "https://t.co/RyFQGLGB5y",
+                    "expanded_url": "https://www.diariodocentrodomundo.com.br/essencial/charge-a-escolha-muito-dificil-de-bolsonaro-por-jota-cancelo/",
+                    "display_url": "diariodocentrodomundo.com.br/essencial/char",
+                    "images": [
+                        {
+                            "url": "https://pbs.twimg.com/news_img/1361293526051487744/a1ChrwGg?format=jpg&name=orig",
+                            "width": 901,
+                            "height": 614
+                        },
+                        {
+                            "url": "https://pbs.twimg.com/news_img/1361293526051487744/a1ChrwGg?format=jpg&name=150x150",
+                            "width": 150,
+                            "height": 150
+                        }
+                    ],
+                    "status": 200,
+                    "title": "Charge: A \"escolha muito difcil\" de Bolsonaro. Por Jota Cancelo",
+                    "description": "Em 2018, o Estado ficou em dvida entre a democracia e a barbrie com seu editorial da escolha muito difcil. Desta vez, Bolsonaro tambm tem o mesmo dilema. Mas, dessa vez, sabemos o resultado. Como em 2018, o resultado ser a barbrie.",
+                    "unwound_url": "https://www.diariodocentrodomundo.com.br/essencial/charge-a-escolha-muito-dificil-de-bolsonaro-por-jota-cancelo/"
+                }
+            ],
+            "annotations": [
+                {
+                    "start": 53,
+                    "end": 61,
+                    "probability": 0.9983,
+                    "type": "Person",
+                    "normalized_text": "Bolsonaro"
+                },
+                {
+                    "start": 68,
+                    "end": 79,
+                    "probability": 0.9854,
+                    "type": "Person",
+                    "normalized_text": "Jota Cancelo"
+                }
+            ]
+        },
+        "public_metrics": {
+            "retweet_count": 15,
+            "reply_count": 0,
+            "like_count": 0,
+            "quote_count": 0
+        },
+        "source": "Twitter Web App"
+    },
+    "includes": {
+        "users": [
+            {
+                "id": "487110460",
+                "name": "Rodrigo #ForaBolsonaro Lula 2022",
+                "url": "",
+                "profile_image_url": "https://pbs.twimg.com/profile_images/1218558891115544576/cX46Vyni_normal.jpg",
+                "created_at": "2012-02-09T00:55:57.000Z",
+                "protected": false,
+                "description": "Ex-preso poltico em 1971/72. Na luta nestes tempos difceis de fascismo.",
+                "username": "RodP13",
+                "pinned_tweet_id": "1361006832744038400",
+                "location": "Belo Horizonte",
+                "public_metrics": {
+                    "followers_count": 31859,
+                    "following_count": 2136,
+                    "tweet_count": 513355,
+                    "listed_count": 128
+                },
+                "verified": false
+            },
+            {
+                "id": "43340387",
+                "name": "DCM ONLINE",
+                "url": "https://t.co/g04eHxTQQX",
+                "profile_image_url": "https://pbs.twimg.com/profile_images/718100254306992128/sdOjwWxp_normal.jpg",
+                "entities": {
+                    "url": {
+                        "urls": [
+                            {
+                                "start": 0,
+                                "end": 23,
+                                "url": "https://t.co/g04eHxTQQX",
+                                "expanded_url": "http://www.diariodocentrodomundo.com.br/",
+                                "display_url": "diariodocentrodomundo.com.br"
+                            }
+                        ]
+                    }
+                },
+                "created_at": "2009-05-29T14:36:06.000Z",
+                "protected": false,
+                "description": "Site apartidrio de notcias e anlises. Nossa misso  lutar por uma sociedade menos desigual. Diretor: Kiko Nogueira",
+                "username": "DCM_online",
+                "location": "Sao Paulo, Brazil",
+                "public_metrics": {
+                    "followers_count": 238324,
+                    "following_count": 1123,
+                    "tweet_count": 188800,
+                    "listed_count": 1084
+                },
+                "verified": true
+            }
+        ],
+        "tweets": [
+            {
+                "reply_settings": "everyone",
+                "text": "Charge: A escolha muito difcil de Bolsonaro. Por Jota Cancelo https://t.co/RyFQGLGB5y",
+                "possibly_sensitive": false,
+                "lang": "pt",
+                "created_at": "2021-02-15T12:37:22.000Z",
+                "id": "1361293525573373955",
+                "author_id": "43340387",
+                "conversation_id": "1361293525573373955",
+                "public_metrics": {
+                    "retweet_count": 15,
+                    "reply_count": 3,
+                    "like_count": 45,
+                    "quote_count": 0
+                },
+                "entities": {
+                    "urls": [
+                        {
+                            "start": 65,
+                            "end": 88,
+                            "url": "https://t.co/RyFQGLGB5y",
+                            "expanded_url": "https://www.diariodocentrodomundo.com.br/essencial/charge-a-escolha-muito-dificil-de-bolsonaro-por-jota-cancelo/",
+                            "display_url": "diariodocentrodomundo.com.br/essencial/char",
+                            "images": [
+                                {
+                                    "url": "https://pbs.twimg.com/news_img/1361293526051487744/a1ChrwGg?format=jpg&name=orig",
+                                    "width": 901,
+                                    "height": 614
+                                },
+                                {
+                                    "url": "https://pbs.twimg.com/news_img/1361293526051487744/a1ChrwGg?format=jpg&name=150x150",
+                                    "width": 150,
+                                    "height": 150
+                                }
+                            ],
+                            "status": 200,
+                            "title": "Charge: A \"escolha muito difcil\" de Bolsonaro. Por Jota Cancelo",
+                            "description": "Em 2018, o Estado ficou em dvida entre a democracia e a barbrie com seu editorial da escolha muito difcil. Desta vez, Bolsonaro tambm tem o mesmo dilema. Mas, dessa vez, sabemos o resultado. Como em 2018, o resultado ser a barbrie.",
+                            "unwound_url": "https://www.diariodocentrodomundo.com.br/essencial/charge-a-escolha-muito-dificil-de-bolsonaro-por-jota-cancelo/"
+                        }
+                    ],
+                    "annotations": [
+                        {
+                            "start": 37,
+                            "end": 45,
+                            "probability": 0.9983,
+                            "type": "Person",
+                            "normalized_text": "Bolsonaro"
+                        },
+                        {
+                            "start": 52,
+                            "end": 63,
+                            "probability": 0.986,
+                            "type": "Person",
+                            "normalized_text": "Jota Cancelo"
+                        }
+                    ]
+                },
+                "source": "Twitter Web App"
+            }
+        ]
+    },
+    "matching_rules": [
+        {
+            "id": 1361322083444281347,
+            "tag": "Bolsonaro"
+        }
+    ]
+}

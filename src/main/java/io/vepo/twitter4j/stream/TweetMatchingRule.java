@@ -1,4 +1,6 @@
-package io.vepo.twitter4j;
+package io.vepo.twitter4j.stream;
+
+import java.util.Objects;
 
 public class TweetMatchingRule {
     private String id;
@@ -24,36 +26,30 @@ public class TweetMatchingRule {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((id == null) ? 0 : id.hashCode());
-        result = prime * result + ((tag == null) ? 0 : tag.hashCode());
+        result = prime * result + Objects.hashCode(id);
+        result = prime * result + Objects.hashCode(tag);
         return result;
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj)
+        if (this == obj) {
             return true;
-        if (obj == null)
+        }
+        if (obj == null) {
             return false;
-        if (getClass() != obj.getClass())
+        }
+        if (getClass() != obj.getClass()) {
             return false;
+        }
         TweetMatchingRule other = (TweetMatchingRule) obj;
-        if (id == null) {
-            if (other.id != null)
-                return false;
-        } else if (!id.equals(other.id))
-            return false;
-        if (tag == null) {
-            if (other.tag != null)
-                return false;
-        } else if (!tag.equals(other.tag))
-            return false;
-        return true;
+        return Objects.equals(id, other.id) &&
+                Objects.equals(tag, other.tag);
     }
 
     @Override
     public String toString() {
-        return "TweetMatchingRule [id=" + id + ", tag=" + tag + "]";
+        return String.format("TweetMatchingRule [id=%s, tag=%s]", id, tag);
     }
 
 }
