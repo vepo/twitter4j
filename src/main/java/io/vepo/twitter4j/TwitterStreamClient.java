@@ -136,7 +136,7 @@ public interface TwitterStreamClient {
         public String getQueryValue() {
             return queryValue;
         }
-    };
+    }
 
     /**
      * <p>
@@ -178,7 +178,7 @@ public interface TwitterStreamClient {
         public String getQueryValue() {
             return queryValue;
         }
-    };
+    }
 
     /**
      * <p>

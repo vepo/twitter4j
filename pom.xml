@@ -69,6 +69,7 @@
 			<groupId>org.mock-server</groupId>
 			<artifactId>mockserver-junit-jupiter</artifactId>
 			<version>5.11.2</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 
@@ -95,8 +96,11 @@
 							@{argLine}
 							--add-modules ALL-SYSTEM
 							--add-opens java.base/jdk.internal.util=ALL-UNNAMED
+							--add-opens java.base/java.lang.reflect=ALL-UNNAMED
 							--add-opens io.vepo.twitter4j/io.vepo.twitter4j=ALL-UNNAMED
 							--add-opens io.vepo.twitter4j/io.vepo.twitter4j.stream=ALL-UNNAMED
+							--add-opens io.vepo.twitter4j/io.vepo.twitter4j.impl=ALL-UNNAMED
+							--add-exports io.vepo.twitter4j/io.vepo.twitter4j.impl.api=com.fasterxml.jackson.databind
 							--illegal-access=permit
 						]]>
 					</argLine>

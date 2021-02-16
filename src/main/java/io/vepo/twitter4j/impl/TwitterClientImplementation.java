@@ -21,6 +21,8 @@ import io.vepo.twitter4j.impl.api.TwitterOAuth2Token;
 public class TwitterClientImplementation implements TwitterClient {
     private static final Logger logger = LoggerFactory.getLogger(TwitterClientImplementation.class);
 
+    static String TWITTER_AUTH_ENDPOINT = "https://api.twitter.com/oauth2/token";
+
     private String apiKey;
     private String apiKeySecret;
 
@@ -37,7 +39,7 @@ public class TwitterClientImplementation implements TwitterClient {
         try {
             logger.trace("Starting authentication...");
             var authRequest = HttpRequest.newBuilder()
-                                         .uri(URI.create("https://api.twitter.com/oauth2/token"))
+                                         .uri(URI.create(TWITTER_AUTH_ENDPOINT))
                                          .POST(BodyPublishers.ofString("grant_type=client_credentials"))
                                          .header("Authorization", generateAutorizationHeaderForNonAuthenticated())
                                          .header("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8")
