@@ -19,5 +19,9 @@ tClient.authenticate()
                                      .isRetweet()
                                      .build())
                     .applyTag("Tweets about Trump"))
-        .consume(System.out::println);
+        .requestExpansion(Expansions.GEO_PLACE_ID)
+        .requiredTweetField(TweetFields.ENTITIES)
+        .requiredTweetField(TweetFields.CONTEXT_ANNOTATIONS)
+        .consume(System.out::println)
+        .join();
 ```
