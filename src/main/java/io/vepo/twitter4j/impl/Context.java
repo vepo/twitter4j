@@ -16,6 +16,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import io.vepo.twitter4j.TwitterClient;
@@ -33,7 +34,7 @@ class Context {
     Context(TwitterClient main) {
         this.main = main;
         httpClient = HttpClient.newHttpClient();
-        objectMapper = new ObjectMapper();
+        objectMapper = new ObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, true);
         executors = new ArrayList<>();
     }
 

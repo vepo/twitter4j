@@ -4,9 +4,18 @@ import java.util.Objects;
 
 public class EntityMention {
 
+    private String id;
     private int start;
     private int end;
     private String username;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public int getStart() {
         return start;
@@ -34,12 +43,7 @@ public class EntityMention {
 
     @Override
     public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + Integer.hashCode(end);
-        result = prime * result + Integer.hashCode(start);
-        result = prime * result + Objects.hashCode(username);
-        return result;
+        return Objects.hash(this.id, this.start, this.end, this.username);
     }
 
     @Override
@@ -54,13 +58,14 @@ public class EntityMention {
             return false;
         }
         EntityMention other = (EntityMention) obj;
-        return end == other.end &&
+        return Objects.equals(id, other.id) &&
+                end == other.end &&
                 start == other.start &&
                 Objects.equals(username, other.username);
     }
 
     @Override
     public String toString() {
-        return String.format("EntityMention [start=%s, end=%s, username=%s]", start, end, username);
+        return String.format("EntityMention [id=%s, start=%s, end=%s, username=%s]", id, start, end, username);
     }
 }

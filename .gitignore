@@ -4,3 +4,4 @@ target
 .classpath
 /twitter4j.iml
 .idea
+.vscode

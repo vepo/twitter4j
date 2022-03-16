@@ -1,4 +1,4 @@
-module io.vepo.twitter4j {
+open module io.vepo.twitter4j {
     requires java.base;
     requires java.net.http;
 

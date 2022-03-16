@@ -1,5 +1,7 @@
 package io.vepo.twitter4j;
 
+import java.util.function.Consumer;
+
 import io.vepo.twitter4j.impl.TwitterClientImplementation;
 
 public interface TwitterClient {
@@ -16,4 +18,5 @@ public interface TwitterClient {
 
     public abstract TwitterStreamClient stream();
 
+    public abstract TwitterClient reply(String tweetId, String text, Consumer<TweetData> callback);
 }

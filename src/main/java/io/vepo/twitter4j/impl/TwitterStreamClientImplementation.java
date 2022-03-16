@@ -24,11 +24,17 @@ import org.slf4j.LoggerFactory;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 
+import io.vepo.twitter4j.Expansions;
+import io.vepo.twitter4j.MediaFields;
+import io.vepo.twitter4j.PlaceFields;
+import io.vepo.twitter4j.PollFields;
 import io.vepo.twitter4j.Rule;
+import io.vepo.twitter4j.TweetFields;
 import io.vepo.twitter4j.TwitterClient;
 import io.vepo.twitter4j.TwitterClientException;
 import io.vepo.twitter4j.TwitterClientException.CauseType;
 import io.vepo.twitter4j.TwitterStreamClient;
+import io.vepo.twitter4j.UserFields;
 import io.vepo.twitter4j.impl.api.GetStreamRulesResponse;
 import io.vepo.twitter4j.impl.api.RuleData;
 import io.vepo.twitter4j.impl.api.RulesDeleteIds;
@@ -142,6 +148,9 @@ public class TwitterStreamClientImplementation implements TwitterStreamClient {
                         if (nonNull(line) && !line.isBlank()) {
                             logger.info("Processando line: {}", line);
                             tweetConsumer.accept(this.context.readValue(line, TweetInfo.class));
+                            logger.trace("Tweet processed!");
+                        } else {
+                            logger.trace("Nothing to read");
                         }
 
                     } while (nonNull(line) && !executor.isShutdown());
@@ -149,8 +158,9 @@ public class TwitterStreamClientImplementation implements TwitterStreamClient {
                 }
             }
             logger.info("Consumer exited!");
-        } catch (IOException e) {
-            throw new TwitterClientException(CauseType.IO_EXCEPTION, e);
+        } catch (IOException ex) {
+            logger.error("Error reading tweet!", ex);
+            throw new TwitterClientException(CauseType.IO_EXCEPTION, ex);
         } catch (InterruptedException e) {
             // Finishing
             Thread.currentThread().interrupt();
